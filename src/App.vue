@@ -1,30 +1,23 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <h1>qeqeqeqeq</h1>
+  <button class="btn btn-primary">dadadda</button>
+  <NavBar/>
   <router-view/>
+  <Footer/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import NavBar from '@/layout/NavBar'
+import Footer from '@/layout/Footer'
+export default {
+  components: {
+    NavBar,
+    Footer
+  },
+  setup () {
   }
 }
+</script>
+
+<style lang="scss">
 </style>
