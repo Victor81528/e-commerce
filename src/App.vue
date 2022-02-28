@@ -1,6 +1,4 @@
 <template>
-  <h1>qeqeqeqeq</h1>
-  <button class="btn btn-primary">dadadda</button>
   <NavBar/>
   <router-view/>
   <Footer/>
@@ -20,4 +18,5 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;600&family=Krona+One&display=swap');
 </style>

@@ -1,12 +1,32 @@
 <template>
-  <div class="footer bg-warning">
-    <p>hi footer</p>
+  <div class="footer">
+    <div class="bg-dark" style="opacity: 0.9">
+      <div class="container-xxl px-0 py-5">
+        <ul class="nav d-flex h-100 justify-content-center align-center fs-2">
+          <li class="nav-link text-white"><i class="fa-brands fa-twitter my-auto"></i></li>
+          <li class="nav-link text-white"><i class="fa-brands fa-instagram"></i></li>
+          <li class="nav-link text-white"><i class="fa-brands fa-facebook-f"></i></li>
+          <li class="nav-link text-white"><i class="fa-brands fa-pinterest"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bg-dark">
+      <div class="container-xxl px-0">
+        <p class="text-center text-white py-3 m-0">Copyright© {{timeYear}}</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  setup () {
+    const timeYear = new Date().getFullYear()
+    return {
+      timeYear
+    }
+  }
 }
 </script>
 
