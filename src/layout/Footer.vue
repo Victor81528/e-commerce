@@ -1,12 +1,12 @@
 <template>
   <div class="footer">
     <div class="bg-dark" style="opacity: 0.9">
-      <div class="container-xxl px-0 py-4">
+      <div class="container-xxl px-0 py-2">
         <ul class="nav d-flex h-100 justify-content-center align-center fs-2">
-          <li class="nav-link text-white"><i class="fa-brands fa-twitter my-auto"></i></li>
-          <li class="nav-link text-white"><i class="fa-brands fa-instagram"></i></li>
-          <li class="nav-link text-white"><i class="fa-brands fa-facebook-f"></i></li>
-          <li class="nav-link text-white"><i class="fa-brands fa-pinterest"></i></li>
+          <li class="nav-link text-white px-3 mx-3"><i class="fa-brands fa-twitter my-auto"></i></li>
+          <li class="nav-link text-white px-3 mx-3"><i class="fa-brands fa-instagram"></i></li>
+          <li class="nav-link text-white px-3 mx-3"><i class="fa-brands fa-facebook-f"></i></li>
+          <li class="nav-link text-white px-3 mx-3"><i class="fa-brands fa-pinterest"></i></li>
         </ul>
       </div>
     </div>

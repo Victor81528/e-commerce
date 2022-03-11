@@ -1,7 +1,7 @@
 <template>
-  <div id="carousel" class="carousel slide user-select-none" data-bs-ride="carousel" data-bs-interval="false" pause>
+  <div id="carousel" class="carousel slide bg-dark user-select-none" data-bs-ride="carousel" data-bs-interval="false" pause>
     <div class="carousel-inner">
-      <div class="carousel-item position-relative" :class="{ active: index === 0 }" v-for="(item, index) of data" :key="index">
+      <div class="carousel-item position-relative" :class="{ active: index === 0 }" v-for="(item, index) of banner" :key="index">
         <img :src="item.img" class="d-block w-100">
         <div class="carousel-caption d-none d-md-block">
           <h5 v-html="item.title"></h5>
@@ -30,46 +30,9 @@
 <script>
 export default {
   name: 'Carousel',
+  props: ['banner'],
   setup () {
-    const data = [
-      {
-        title: 'Valentine’s day',
-        img: '/img/banner/01.jpeg',
-        desc: '',
-        linkTitle: 'Discover the new collection',
-        link: ''
-      },
-      {
-        title: 'Bolas <span style="color: black">x</span> Kjølig',
-        img: '/img/banner/02.jpeg',
-        desc: '',
-        linkTitle: 'Discover the new collection',
-        link: ''
-      },
-      {
-        title: '2022 SPRING',
-        img: '/img/banner/03.jpeg',
-        desc: '',
-        linkTitle: 'Discover the new collection',
-        link: ''
-      },
-      {
-        title: '<span style="color: black">Ocalou Design<span>',
-        img: '/img/banner/04.jpeg',
-        desc: '',
-        linkTitle: '<span style="color: black; font-weight: 600">Discover the new collection</span>',
-        link: ''
-      },
-      {
-        title: '<span">Accessories<span>',
-        img: '/img/banner/05.jpeg',
-        desc: '',
-        linkTitle: '<span style="color: black; font-weight: 600">Discover the new collection</span>',
-        link: ''
-      }
-    ]
     return {
-      data
     }
   }
 }
@@ -85,5 +48,9 @@ export default {
   a {
     text-decoration: none;
   }
+}
+img {
+  max-height: 669px;
+  object-fit: scale-down;
 }
 </style>

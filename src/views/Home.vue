@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <Carousel/>
-    <SwiperCard :data="handPickedDaily" title="Hand-pickedDaily"/>
+    <Carousel :banner="banner"/>
+    <SwiperCard :data="handPickedDaily" title="Hand-picked Daily"/>
     <SwiperCard :data="trendingNow" title="Trending now"/>
   </div>
 </template>
@@ -20,6 +20,7 @@ export default {
   setup () {
     const store = useStore()
     return {
+      banner: computed(() => store.state.banner.data),
       handPickedDaily: computed(() => store.state.slidecard.handPickedDaily),
       trendingNow: computed(() => store.state.slidecard.trendingNow)
     }

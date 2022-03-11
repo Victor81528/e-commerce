@@ -2,7 +2,7 @@
 <div class="navbar py-0 user-select-none">
   <!-- nav1 -->
   <div class="w-100 bg-dark">
-    <div class="container px-0">
+    <div class="container">
       <div class="row">
         <nav class="nav py-0" style="font-family: 'Jost';font-weight: 600;">
           <a class="nav1 nav-link text-secondary mx-1 py-1">WOMEN</a>
@@ -14,19 +14,19 @@
   </div>
   <!-- nav2 -->
   <div class="w-100 bg-primary">
-    <div class="container px-0">
+    <div class="container">
       <div class="row">
         <nav class="d-flex flex-row position-relative w-100 justify-content-between">
-          <h1 class="d-flex position-absolute top-50 start-50 my-auto"
+          <h1 class="navbar-brand d-flex position-absolute top-50 start-50 my-auto"
             style="transform: translate(-50%,-50%);vertical-align: middle">
             <a href="/" class="align-center text-dark text-decoration-none"
               style="vertical-align: middle;font-family: 'Krona one';font-size: 21px; font-weight: 600">Kjølig</a>
           </h1>
           <ul class="nav py-3">
             <li class="nav2 nav-link px-2 mr-1 text-secondary">Main</li>
-            <li class="nav2 nav-link px-2 mx-1 text-secondary">New in</li>
             <li class="nav2 nav-link px-2 mx-1 text-secondary">Cloathing</li>
             <li class="nav2 nav-link px-2 mx-1 text-secondary">Shoes</li>
+            <li class="nav2 nav-link px-2 mx-1 text-secondary">Bag</li>
           </ul>
           <ul class="nav align-items-center">
             <li class="nav3 nav-link text-dark"><i class="fas fa-magnifying-glass"></i></li>

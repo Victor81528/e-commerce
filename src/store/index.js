@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import banner from './banner'
 import slidecard from './slidecard'
 
 export default createStore({
@@ -9,6 +10,7 @@ export default createStore({
   actions: {
   },
   modules: {
+    banner,
     slidecard
   }
 })

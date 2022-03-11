@@ -2,35 +2,49 @@ const state = {
   handPickedDaily: [
     {
       title: 'Must Have',
-      img: '/img/banner/01.jpeg',
+      img: '/img/product/01.jpeg',
       desc: 'List from stylist Hannah Berns',
       linkTitle: 'Discover the new collection',
       link: ''
     },
     {
       title: 'New Arrival',
-      img: '/img/banner/02.jpeg',
+      img: '/img/product/02.jpeg',
       desc: 'List from stylist Jogn Greenwood',
       linkTitle: 'Discover the new collection',
       link: ''
     },
     {
       title: 'The Look',
-      img: '/img/banner/03.jpeg',
+      img: '/img/product/03.jpeg',
       desc: 'List from stylist Ben Gordon',
       linkTitle: 'Discover the new collection',
       link: ''
     },
     {
       title: 'Insta Shock',
-      img: '/img/banner/04.jpeg',
+      img: '/img/product/04.jpeg',
       desc: 'List from stylist Norman Cage',
       linkTitle: '<span style="color: black; font-weight: 600">Discover the new collection</span>',
       link: ''
     },
     {
       title: 'Just Chill',
-      img: '/img/banner/05.jpeg',
+      img: '/img/product/05.jpeg',
+      desc: 'List from stylist Tom Ray',
+      linkTitle: '<span style="color: black; font-weight: 600">Discover the new collection</span>',
+      link: ''
+    },
+    {
+      title: 'Hot Selling',
+      img: '/img/product/06.jpeg',
+      desc: 'List from stylist Tom Ray',
+      linkTitle: '<span style="color: black; font-weight: 600">Discover the new collection</span>',
+      link: ''
+    },
+    {
+      title: 'Just Chill',
+      img: '/img/product/07.jpeg',
       desc: 'List from stylist Tom Ray',
       linkTitle: '<span style="color: black; font-weight: 600">Discover the new collection</span>',
       link: ''
@@ -38,31 +52,51 @@ const state = {
   ],
   trendingNow: [
     {
-      title: 'Trending Now’s day',
-      img: '/img/banner/01.jpeg',
-      desc: '',
-      linkTitle: 'Discover the new collection',
+      title: 'Maculay 03',
+      img: '/img/product/08.jpeg',
+      desc: 'New colors arrival',
       link: ''
     },
     {
-      title: 'Bolas <span style="color: black">x</span> Kjølig',
-      img: '/img/banner/02.jpeg',
-      desc: '',
-      linkTitle: 'Discover the new collection',
+      title: 'Vender outlander',
+      img: '/img/product/09.jpeg',
+      desc: 'Classic Landing Shoes',
       link: ''
     },
     {
-      title: '2022 SPRING',
-      img: '/img/banner/03.jpeg',
-      desc: '',
-      linkTitle: 'Discover the new collection',
+      title: 'One Pinker',
+      img: '/img/product/10.jpeg',
+      desc: 'Young! Sexy!',
       link: ''
     },
     {
-      title: '<span style="color: black">Ocalou Design<span>',
-      img: '/img/banner/04.jpeg',
-      desc: '',
-      linkTitle: '<span style="color: black; font-weight: 600">Discover the new collection</span>',
+      title: 'Vintage 1970s',
+      img: '/img/product/11.jpeg',
+      desc: 'Retro fashion',
+      link: ''
+    },
+    {
+      title: 'W601 S22',
+      img: '/img/product/12.jpeg',
+      desc: 'Dating outfit',
+      link: ''
+    },
+    {
+      title: 'Solaire of Astora',
+      img: '/img/product/13.jpeg',
+      desc: 'Praise the sun!',
+      link: ''
+    },
+    {
+      title: 'W202',
+      img: '/img/product/14.jpeg',
+      desc: 'Be with you when working',
+      link: ''
+    },
+    {
+      title: 'wandering 03',
+      img: '/img/product/15.jpeg',
+      desc: 'Hmmmmm...',
       link: ''
     }
   ]
