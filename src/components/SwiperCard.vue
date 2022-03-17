@@ -37,13 +37,13 @@ export default {
   name: 'SwiperCard',
   props: ['data', 'title'],
   setup () {
+    let swiper = null
     const swiperEle = ref(null)
     const prevButton = ref(null)
     const nextButton = ref(null)
     const prevDisallowed = ref(true)
     const nextDisallowed = ref(false)
 
-    let swiper = null
     onMounted(() => {
       swiper = new Swiper(swiperEle.value, {
         modules: [Navigation],
@@ -53,14 +53,22 @@ export default {
         },
         breakpoints: {
           // when window width is >= 640px
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
           992: {
+            slidesPerView: 3,
+            spaceBetween: 20
+          },
+          1200: {
             slidesPerView: 4,
             spaceBetween: 20
           },
           1400: {
             allowTouchMove: false,
             slidesPerView: 5,
-            spaceBetween: 20
+            spaceBetween: 18
           }
         },
         speed: 500,
@@ -114,9 +122,9 @@ hr {
         object-fit: cover;
         // object-position: 0 0;
         -webkit-user-drag: none;
-        transition: 0.2s;
+        transition: 0.25s;
         &:hover {
-          filter: blur(3px);
+          filter: blur(5px);
         }
       }
     }

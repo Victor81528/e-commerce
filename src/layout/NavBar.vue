@@ -5,9 +5,9 @@
     <div class="container">
       <div class="row">
         <nav class="nav py-0" style="font-family: 'Jost';font-weight: 600;">
-          <a class="nav1 nav-link text-secondary mx-1 py-1">WOMEN</a>
-          <a class="nav1 nav-link text-secondary mx-1 py-1">MEN</a>
-          <a class="nav1 nav-link text-secondary mx-1 py-1">KIDS</a>
+          <a class="nav1 nav-link text-secondary mx-1 py-1" data-toggle="tab">WOMEN</a>
+          <a class="nav1 nav-link text-secondary mx-1 py-1" data-toggle="tab">MEN</a>
+          <a class="nav1 nav-link text-secondary mx-1 py-1" data-toggle="tab">KIDS</a>
         </nav>
       </div>
     </div>

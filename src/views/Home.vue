@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Carousel :banner="banner"/>
+    <Banner :banner="banner"/>
     <SwiperCard :data="handPickedDaily" title="Hand-picked Daily"/>
     <SwiperCard :data="trendingNow" title="Trending now"/>
   </div>
@@ -9,12 +9,12 @@
 <script>
 import { computed } from 'vue'
 import { useStore } from 'vuex'
-import Carousel from '@/components/Carousel.vue'
+import Banner from '@/components/Banner.vue'
 import SwiperCard from '@/components/SwiperCard.vue'
 export default {
   name: 'Home',
   components: {
-    Carousel,
+    Banner,
     SwiperCard
   },
   setup () {
