@@ -87,6 +87,7 @@ export default {
       left: 50%;
       transform: translate(-50%,-50%);
       font-size: 100px;
+      white-space: nowrap;
     }
     p {
       position: absolute;

@@ -120,7 +120,6 @@ hr {
         width: 100%;
         height: 360px;
         object-fit: cover;
-        // object-position: 0 0;
         -webkit-user-drag: none;
         transition: 0.25s;
         &:hover {

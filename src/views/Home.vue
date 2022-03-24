@@ -2,7 +2,7 @@
   <div class="home">
     <Banner :banner="banner"/>
     <SwiperCard :data="handPickedDaily" title="Hand-picked Daily"/>
-    <SwiperCard :data="trendingNow" title="Trending now"/>
+    <SwiperCard :data="trendingNow" title="Trending Now"/>
   </div>
 </template>
 

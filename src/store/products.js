@@ -2,7 +2,7 @@ const state = {
   list: [
     {
       id: 0,
-      title: 'Must Have',
+      title: 'Coluca white',
       img: '/img/product/01.jpeg',
       desc: 'List from stylist Hannah Berns',
       price: 499,
@@ -11,7 +11,7 @@ const state = {
     },
     {
       id: 1,
-      title: 'New Arrival',
+      title: 'Times S103',
       img: '/img/product/02.jpeg',
       desc: 'List from stylist Jogn Greenwood',
       price: 5200,
@@ -20,7 +20,7 @@ const state = {
     },
     {
       id: 2,
-      title: 'The Look',
+      title: 'Loca 06',
       img: '/img/product/03.jpeg',
       desc: 'List from stylist Ben Gordon',
       price: 1769,
@@ -29,7 +29,7 @@ const state = {
     },
     {
       id: 3,
-      title: 'Insta Shock',
+      title: 'Highlander',
       img: '/img/product/04.jpeg',
       desc: 'List from stylist Norman Cage',
       price: 320,
@@ -38,7 +38,7 @@ const state = {
     },
     {
       id: 4,
-      title: 'Just Chill',
+      title: 'Fanco T-shirt',
       img: '/img/product/05.jpeg',
       desc: 'List from stylist Tom Ray',
       price: 599,
@@ -47,7 +47,7 @@ const state = {
     },
     {
       id: 5,
-      title: 'Hot Selling',
+      title: 'Royaloy coat',
       img: '/img/product/06.jpeg',
       desc: 'List from stylist Tom Ray',
       price: 1850,
@@ -56,7 +56,7 @@ const state = {
     },
     {
       id: 6,
-      title: 'Just Chill',
+      title: 'Snowa coat',
       img: '/img/product/07.jpeg',
       desc: 'List from stylist Tom Ray',
       price: 7200,
@@ -128,7 +128,7 @@ const state = {
     },
     {
       id: 14,
-      title: 'wandering 03',
+      title: 'Wandering 03',
       img: '/img/product/15.jpeg',
       desc: 'Hmmmmm...',
       price: 6990,
@@ -143,13 +143,301 @@ const state = {
       price: 10600,
       gender: 1,
       type: 0
+    },
+    {
+      id: 16,
+      title: 'J suit',
+      img: '/img/product/17.jpeg',
+      desc: 'For halloween, may be...',
+      price: 3600,
+      gender: 0,
+      type: 1
+    },
+    {
+      id: 17,
+      title: 'J suit',
+      img: '/img/product/18.jpeg',
+      desc: 'For halloween, may be...',
+      price: 4200,
+      gender: 0,
+      type: 1
+    },
+    {
+      id: 18,
+      title: 'J suit',
+      img: '/img/product/19.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2560,
+      gender: 2,
+      type: 1
+    },
+    {
+      id: 19,
+      title: 'J suit',
+      img: '/img/product/20.jpeg',
+      desc: 'For halloween, may be...',
+      price: 12500,
+      gender: 1,
+      type: 2
+    },
+    {
+      id: 20,
+      title: 'J suit',
+      img: '/img/product/21.jpeg',
+      desc: 'For halloween, may be...',
+      price: 7280,
+      gender: 2,
+      type: 1
+    },
+    {
+      id: 21,
+      title: 'Hahahaha',
+      img: '/img/product/22.jpeg',
+      desc: 'For halloween, may be...',
+      price: 7280,
+      gender: 1,
+      type: 1
+    },
+    {
+      id: 22,
+      title: 'Hahahaha',
+      img: '/img/product/23.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 1
+    },
+    {
+      id: 23,
+      title: 'Hahahaha',
+      img: '/img/product/24.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 2
+    },
+    {
+      id: 24,
+      title: 'Hahahaha',
+      img: '/img/product/25.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 2,
+      type: 2
+    },
+    {
+      id: 25,
+      title: 'Hahahaha',
+      img: '/img/product/26.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 2,
+      type: 2
+    },
+    {
+      id: 26,
+      title: 'Hahahaha',
+      img: '/img/product/27.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 1,
+      type: 2
+    },
+    {
+      id: 27,
+      title: 'Hahahaha',
+      img: '/img/product/28.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 2,
+      type: 2
+    },
+    {
+      id: 28,
+      title: 'Hahahaha',
+      img: '/img/product/29.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 0
+    },
+    {
+      id: 29,
+      title: 'Hahahaha',
+      img: '/img/product/30.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 0
+    },
+    {
+      id: 30,
+      title: 'Hahahaha',
+      img: '/img/product/31.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 2
+    },
+    {
+      id: 31,
+      title: 'Hahahaha',
+      img: '/img/product/32.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 2,
+      type: 2
+    },
+    {
+      id: 32,
+      title: 'Hahahaha',
+      img: '/img/product/33.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 1,
+      type: 0
+    },
+    {
+      id: 33,
+      title: 'Hahahaha',
+      img: '/img/product/34.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 2,
+      type: 2
+    },
+    {
+      id: 34,
+      title: 'Hahahaha',
+      img: '/img/product/35.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 0
+    },
+    {
+      id: 35,
+      title: 'Hahahaha',
+      img: '/img/product/36.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 0
+    },
+    {
+      id: 36,
+      title: 'Hahahaha',
+      img: '/img/product/37.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 2
+    },
+    {
+      id: 37,
+      title: 'Hahahaha',
+      img: '/img/product/38.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 2,
+      type: 2
+    },
+    {
+      id: 38,
+      title: 'Hahahaha',
+      img: '/img/product/39.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 0
+    },
+    {
+      id: 39,
+      title: 'Hahahaha',
+      img: '/img/product/40.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 2,
+      type: 1
+    },
+    {
+      id: 40,
+      title: 'Hahahaha',
+      img: '/img/product/41.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 1,
+      type: 2
+    },
+    {
+      id: 41,
+      title: 'Hahahaha',
+      img: '/img/product/42.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 1
+    },
+    {
+      id: 42,
+      title: 'Hahahaha',
+      img: '/img/product/43.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 0
+    },
+    {
+      id: 43,
+      title: 'Hahahaha',
+      img: '/img/product/44.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 1
+    },
+    {
+      id: 44,
+      title: 'Hahahaha',
+      img: '/img/product/45.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 1
+    },
+    {
+      id: 45,
+      title: 'Hahahaha',
+      img: '/img/product/46.jpeg',
+      desc: 'For halloween, may be...',
+      price: 2350,
+      gender: 0,
+      type: 0
+    },
+    {
+      id: 46,
+      title: 'Hahahaha',
+      img: '/img/product/47.jpeg',
+      desc: 'For halloween, may be...',
+      price: 32690,
+      gender: 0,
+      type: 0
     }
   ]
 }
 
 const getters = {
+  all: () => {
+    return state.list
+  },
   clothing: () => {
     return state.list.filter(i => i.type === 0)
+  },
+  shoes: () => {
+    return state.list.filter(i => i.type === 1)
+  },
+  bag: () => {
+    return state.list.filter(i => i.type === 2)
   }
 }
 
