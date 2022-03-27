@@ -11,6 +11,12 @@ const routes = [
     path: '/shop/:type',
     name: 'Shop',
     component: () => import(/* webpackChunkName: "about" */ '../views/Shop.vue')
+  },
+  {
+    // 未完成
+    path: '/shopinfo/:id(\\d+)',
+    name: 'Shop_info',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ShopInfo.vue')
   }
 ]
 

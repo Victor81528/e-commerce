@@ -6,7 +6,6 @@ import favorite from './favorite'
 
 export default createStore({
   state: {
-    a: 'qqq'
   },
   mutations: {
   },

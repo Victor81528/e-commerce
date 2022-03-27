@@ -113,6 +113,13 @@ hr {
   height: 100%;
   .swiper-slide {
     cursor: pointer;
+    &:hover {
+      .blur {
+        img {
+          filter: blur(5px);
+        }
+      }
+    }
     .blur {
       overflow: hidden;
       border-radius: 16px;
@@ -122,9 +129,6 @@ hr {
         object-fit: cover;
         -webkit-user-drag: none;
         transition: 0.25s;
-        &:hover {
-          filter: blur(5px);
-        }
       }
     }
     h5 {

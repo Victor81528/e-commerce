@@ -31,15 +31,24 @@ const mutations = {
     else {
       let isNew = true
       favorite = JSON.parse(favorite)
-      for (let i = 0; i <= favorite.length - 1; i++) {
-        if (favorite[i].id === good.id) {
+
+      favorite.forEach(i => {
+        if (i.id === good.id) {
           isNew = false
-          break
         }
-      }
+      })
+
       if (isNew) favorite.push(good)
     }
     // 將新favorite覆蓋舊的
+    localStorage.setItem('favorite', JSON.stringify(favorite))
+  },
+  remove: (state, id) => {
+    let favorite = localStorage.getItem('favorite')
+    favorite = JSON.parse(favorite)
+    favorite = favorite.filter(i => {
+      return i.id !== id
+    })
     localStorage.setItem('favorite', JSON.stringify(favorite))
   }
 }

@@ -1,14 +1,20 @@
 <template>
   <div class="shop">
-    <h1>This is an about page</h1>
+    <h1>shopinfo no. {{id}}</h1>
   </div>
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 export default {
-  name: 'shop_info',
+  name: 'Shop_info',
   setup () {
-    return {}
+    const route = useRoute()
+    const id = computed(() => route.params.id)
+    return {
+      id
+    }
   }
 }
 </script>

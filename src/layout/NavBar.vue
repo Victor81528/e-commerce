@@ -1,19 +1,19 @@
 <template>
-<div class="navbar py-0 user-select-none">
+<div class="navbar py-0">
   <!-- nav1 -->
-  <div class="w-100 bg-dark">
+  <div class="w-100 bg-dark user-select-none">
     <div class="container">
       <div class="row">
         <nav class="nav py-0" style="font-family: 'Jost';font-weight: 600;">
+          <a class="nav1 nav-link text-secondary mx-1 py-1" data-toggle="tab">ALL</a>
           <a class="nav1 nav-link text-secondary mx-1 py-1" data-toggle="tab">WOMEN</a>
           <a class="nav1 nav-link text-secondary mx-1 py-1" data-toggle="tab">MEN</a>
-          <a class="nav1 nav-link text-secondary mx-1 py-1" data-toggle="tab">KIDS</a>
         </nav>
       </div>
     </div>
   </div>
   <!-- nav2 -->
-  <div class="w-100 bg-primary">
+  <div class="w-100 bg-primary user-select-none">
     <div class="container">
       <div class="row">
         <nav class="d-flex flex-row position-relative w-100 justify-content-between">
@@ -62,13 +62,15 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">追蹤清單</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Wishlist</h5>
         </div>
         <div class="modal-body">
-          <ul v-for="item of favInfo" :key="item.id">
-            <li>
-              {{item.title}}
-              ${{item.price}}
+          <ul class="me-3">
+            <li v-for="item of favInfo" :key="item.id" class="d-flex align-items-center">
+              <img :src="item.img" class="me-4">
+              <h5 class="align-self-start mt-2">{{item.title}}</h5>
+              <p class="m-0 ms-auto me-4">$ {{item.price}}</p>
+              <i class="fa-solid fa-xmark" @click="removeFav(item.id)"></i>
             </li>
           </ul>
         </div>
@@ -91,6 +93,7 @@ export default {
     const router = useRouter()
     const store = useStore()
 
+    // router
     const toShop = (type) => {
       router.push({
         name: 'Shop',
@@ -101,13 +104,19 @@ export default {
       })
     }
 
+    // 追蹤清單
     store.commit('favorite/getData')
     const fav = computed(() => store.state.favorite.data)
     const favInfo = computed(() => store.getters['favorite/favInfo'])
+    const removeFav = (id) => {
+      store.commit('favorite/remove', id)
+      store.commit('favorite/getData')
+    }
     return {
       toShop,
       fav,
-      favInfo
+      favInfo,
+      removeFav
     }
   }
 }
@@ -153,6 +162,20 @@ export default {
   transition: 0.3s;
   &:hover {
     opacity: 30%;
+    cursor: pointer;
+  }
+}
+.modal {
+  .modal-title {
+    // font-family: 'Jost';
+  }
+  img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+  i {
+    font-size: 22px;
     cursor: pointer;
   }
 }
