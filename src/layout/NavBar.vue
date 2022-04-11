@@ -5,9 +5,15 @@
     <div class="container">
       <div class="row">
         <nav class="nav py-0" style="font-family: 'Jost';font-weight: 600;">
-          <a class="nav1 nav-link text-secondary mx-1 py-1" data-toggle="tab">ALL</a>
-          <a class="nav1 nav-link text-secondary mx-1 py-1" data-toggle="tab">WOMEN</a>
-          <a class="nav1 nav-link text-secondary mx-1 py-1" data-toggle="tab">MEN</a>
+          <router-link to="/all/all" class="nav1 nav-link text-secondary mx-1 py-1">
+            ALL
+          </router-link>
+          <router-link to="/women/all" class="nav1 nav-link text-secondary mx-1 py-1">
+            WOMEN
+          </router-link>
+          <router-link to="/men/all" class="nav1 nav-link text-secondary mx-1 py-1">
+            MEN
+          </router-link>
         </nav>
       </div>
     </div>
@@ -24,7 +30,7 @@
           </h1>
           <ul class="nav py-3">
             <li class="nav-link px-2 mr-1">
-              <router-link to="/shop/all" class="nav2 position-relative text-secondary">
+              <router-link :to="{ name: 'Shop', params: { group: 'all', type: 'all' }}" class="nav2 position-relative text-secondary">
                 All
                 <div class="point position-absolute rounded bg-danger"></div>
               </router-link>
@@ -51,13 +57,13 @@
           <ul class="nav align-items-center">
             <li class="nav3 nav-link text-dark"><i class="fa-solid fa-magnifying-glass"></i></li>
             <li class="nav3 nav-link text-dark" data-bs-toggle="modal" data-bs-target="#fav"><i class="fa-solid fa-heart"></i></li>
-            <li class="nav3 nav-link text-dark"><i class="fas fa-bag-shopping"></i></li>
+            <li class="nav3 nav-link text-dark" data-bs-toggle="modal" data-bs-target="#cart"><i class="fas fa-bag-shopping"></i></li>
           </ul>
         </nav>
       </div>
     </div>
   </div>
-  <!-- Modal視窗 -->
+  <!-- fav視窗 -->
   <div class="modal fade" id="fav" tabindex="-1">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
@@ -68,11 +74,37 @@
           <ul class="me-3">
             <li v-for="item of favInfo" :key="item.id" class="d-flex align-items-center">
               <img :src="item.img" class="me-4">
-              <h5 class="align-self-start mt-2">{{item.title}}</h5>
+              <h5 class="align-self-start mt-2" data-bs-dismiss="modal" @click="toShopInfo(item.id)">{{item.title}}</h5>
               <p class="m-0 ms-auto me-4">$ {{item.price}}</p>
               <i class="fa-solid fa-xmark" @click="removeFav(item.id)"></i>
             </li>
           </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- cart視窗 -->
+  <div class="modal fade" id="cart" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+        </div>
+        <div class="modal-body">
+          <ul class="me-3">
+            <li v-for="item of cartInfo" :key="item.id" class="d-flex align-items-center">
+              <img :src="item.img" class="me-4">
+              <h5 class="align-self-start mt-2" data-bs-dismiss="modal" @click="toShopInfo(item.id)">{{item.title}}</h5>
+              <p>數量： {{item.qty}}</p>
+              <p class="m-0 ms-auto me-4">單價： {{item.price}}</p>
+              <p class="m-0 ms-auto me-4">小計： {{item.price*item.qty}}</p>
+              <i class="fa-solid fa-xmark" @click="removeCart(item.id)"></i>
+            </li>
+          </ul>
+          總Total: {{totalPrice}}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -85,21 +117,35 @@
 
 <script>
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useStore } from 'vuex'
+
 export default {
   name: 'NavBar',
   setup () {
+    const route = useRoute()
     const router = useRouter()
     const store = useStore()
 
+    // route
+    console.log(route)
     // router
-    const toShop = (type) => {
+    const toShop = (group, type) => {
       router.push({
         name: 'Shop',
-        path: `/shop/${type}`,
+        path: `/${group}/${type}`,
         params: {
+          group: group,
           type: type
+        }
+      })
+    }
+    const toShopInfo = (id) => {
+      router.push({
+        name: 'Shop_info',
+        path: `/shopinfo/${id}`,
+        params: {
+          id: id
         }
       })
     }
@@ -112,11 +158,28 @@ export default {
       store.commit('favorite/remove', id)
       store.commit('favorite/getData')
     }
+    // 購物車
+    store.commit('cart/getData')
+    const cart = computed(() => store.state.cart.data)
+    const cartInfo = computed(() => store.getters['cart/cartInfo'])
+    const totalPrice = computed(() => cartInfo.value.reduce((p, c) => {
+      p += c.price * c.qty
+      return p
+    }, 0))
+    const removeCart = (id) => {
+      store.commit('cart/remove', id)
+      store.commit('cart/getData')
+    }
     return {
       toShop,
+      toShopInfo,
       fav,
       favInfo,
-      removeFav
+      removeFav,
+      cart,
+      cartInfo,
+      totalPrice,
+      removeCart
     }
   }
 }
@@ -173,6 +236,7 @@ export default {
     width: 120px;
     height: 120px;
     object-fit: cover;
+    border-radius: 5px;
   }
   i {
     font-size: 22px;

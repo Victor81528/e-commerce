@@ -3,6 +3,7 @@ import banner from './banner'
 import products from './products'
 import slidecard from './slidecard'
 import favorite from './favorite'
+import cart from './cart'
 
 export default createStore({
   state: {
@@ -15,6 +16,7 @@ export default createStore({
     banner,
     products,
     slidecard,
-    favorite
+    favorite,
+    cart
   }
 })
