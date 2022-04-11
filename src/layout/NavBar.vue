@@ -5,6 +5,7 @@
     <div class="container">
       <div class="row">
         <nav class="nav py-0" style="font-family: 'Jost';font-weight: 600;">
+          <button @click="aaa()">dasada</button>
           <router-link to="/all/all" class="nav1 nav-link text-secondary mx-1 py-1">
             ALL
           </router-link>
@@ -36,19 +37,19 @@
               </router-link>
             </li>
             <li class="nav-link px-2 mx-1">
-              <router-link to="/shop/clothing" class="nav2 position-relative text-secondary">
+              <router-link :to="{ name: 'Shop', params: { group: 'all', type: 'clothing' }}" class="nav2 position-relative text-secondary">
                 Clothing
                 <div class="point position-absolute rounded bg-danger"></div>
               </router-link>
             </li>
             <li class="nav-link px-2 mx-1">
-              <router-link to="/shop/shoes" class="nav2 position-relative text-secondary">
+              <router-link to="/all/shoes" class="nav2 position-relative text-secondary">
                 Shoes
                 <div class="point position-absolute rounded bg-danger"></div>
               </router-link>
             </li>
             <li class="nav-link px-2 mx-1">
-              <router-link to="/shop/bag" class="nav2 position-relative text-secondary">
+              <router-link to="/all/bag" class="nav2 position-relative text-secondary">
                 Bag
                 <div class="point position-absolute rounded bg-danger"></div>
               </router-link>
@@ -128,18 +129,14 @@ export default {
     const store = useStore()
 
     // route
-    console.log(route)
-    // router
-    const toShop = (group, type) => {
-      router.push({
-        name: 'Shop',
-        path: `/${group}/${type}`,
-        params: {
-          group: group,
-          type: type
-        }
-      })
+    const group = computed(() => route.params.group)
+    const type = computed(() => route.params.type)
+    const aaa = () => {
+      if (group.value) console.log(group.value)
+      if (type.value) console.log(type.value)
     }
+
+    // router
     const toShopInfo = (id) => {
       router.push({
         name: 'Shop_info',
@@ -158,6 +155,7 @@ export default {
       store.commit('favorite/remove', id)
       store.commit('favorite/getData')
     }
+
     // 購物車
     store.commit('cart/getData')
     const cart = computed(() => store.state.cart.data)
@@ -171,7 +169,7 @@ export default {
       store.commit('cart/getData')
     }
     return {
-      toShop,
+      group,
       toShopInfo,
       fav,
       favInfo,
@@ -179,7 +177,8 @@ export default {
       cart,
       cartInfo,
       totalPrice,
-      removeCart
+      removeCart,
+      aaa
     }
   }
 }
@@ -190,7 +189,7 @@ export default {
 .nav1 {
   font-size: 9px;
   transition: 0.3s;
-  &:hover {
+  &:hover, &.router-link-active{
     color: white !important;
     cursor: pointer;
   }
