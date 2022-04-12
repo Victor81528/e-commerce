@@ -29,16 +29,13 @@ export default {
       // 重新取得localStorage的資料
       store.commit('favorite/getData')
     }
-
     const removeFav = (id) => {
       store.commit('favorite/remove', id)
       store.commit('favorite/getData')
     }
-
     const toShopinfo = (id) => {
       router.push({
         name: 'Shop_info',
-        path: `/shopinfo/${id}`,
         params: {
           id: id
         }

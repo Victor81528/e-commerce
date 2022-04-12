@@ -15,12 +15,14 @@ const routes = [
   {
     path: '/:group/:type',
     name: 'Shop',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Shop.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Shop.vue'),
+    props: true
   },
   {
     path: '/shopinfo/:id(\\d+)',
     name: 'Shop_info',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ShopInfo.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/ShopInfo.vue'),
+    props: true
   }
 ]
 

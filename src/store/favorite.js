@@ -19,7 +19,7 @@ const getters = {
 const mutations = {
   getData: (state) => {
     state.data = localStorage.getItem('favorite')
-    state.data = JSON.parse(state.data)
+    state.data = JSON.parse(state.data) || []
   },
   add: (state, id) => {
     let favorite = localStorage.getItem('favorite')

@@ -29,8 +29,8 @@ export default {
     const route = useRoute()
 
     // 取得route.params並轉成number
-    const id = computed(() => parseInt(route.params.id))
-    const productInfo = computed(() => store.getters['products/getProInfo'](id.value))
+    const id = parseInt(route.params.id)
+    const productInfo = computed(() => store.getters['products/getProInfo'](id))
 
     // counter
     const count = ref(1)
@@ -57,7 +57,6 @@ export default {
       store.commit('cart/getData')
     }
     return {
-      id,
       productInfo,
       count,
       reduce,

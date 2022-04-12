@@ -25,7 +25,7 @@ const getters = {
 const mutations = {
   getData: (state) => {
     state.data = localStorage.getItem('cart')
-    state.data = JSON.parse(state.data)
+    state.data = JSON.parse(state.data) || []
   },
   add: (state, { id, count }) => {
     let cart = localStorage.getItem('cart')

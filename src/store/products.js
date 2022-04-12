@@ -474,6 +474,14 @@ const state = {
 }
 
 const getters = {
+  selected: (state, getters, rootState) => {
+    const fav = rootState.favorite.data
+    state.list.forEach(i => {
+      fav.forEach(j => {
+        if (i.id === j.id) i.fav = 1
+      })
+    })
+  },
   all: (state, getters, rootState) => {
     const fav = rootState.favorite.data
     state.list.forEach(i => {

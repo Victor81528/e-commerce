@@ -5,14 +5,13 @@
     <div class="container">
       <div class="row">
         <nav class="nav py-0" style="font-family: 'Jost';font-weight: 600;">
-          <button @click="aaa()">dasada</button>
-          <router-link to="/all/all" class="nav1 nav-link text-secondary mx-1 py-1">
+          <router-link :to="{ name: 'Shop', params: { group: 'all', type: type || 'all' }}" class="nav1 nav-link text-secondary mx-1 py-1">
             ALL
           </router-link>
-          <router-link to="/women/all" class="nav1 nav-link text-secondary mx-1 py-1">
+          <router-link :to="{ name: 'Shop', params: { group: 'women', type: type || 'all' }}" class="nav1 nav-link text-secondary mx-1 py-1">
             WOMEN
           </router-link>
-          <router-link to="/men/all" class="nav1 nav-link text-secondary mx-1 py-1">
+          <router-link :to="{ name: 'Shop', params: { group: 'men', type: type || 'all' }}" class="nav1 nav-link text-secondary mx-1 py-1">
             MEN
           </router-link>
         </nav>
@@ -31,25 +30,25 @@
           </h1>
           <ul class="nav py-3">
             <li class="nav-link px-2 mr-1">
-              <router-link :to="{ name: 'Shop', params: { group: 'all', type: 'all' }}" class="nav2 position-relative text-secondary">
+              <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'all' }}" class="nav2 position-relative text-secondary">
                 All
                 <div class="point position-absolute rounded bg-danger"></div>
               </router-link>
             </li>
             <li class="nav-link px-2 mx-1">
-              <router-link :to="{ name: 'Shop', params: { group: 'all', type: 'clothing' }}" class="nav2 position-relative text-secondary">
+              <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'clothing' }}" class="nav2 position-relative text-secondary">
                 Clothing
                 <div class="point position-absolute rounded bg-danger"></div>
               </router-link>
             </li>
             <li class="nav-link px-2 mx-1">
-              <router-link to="/all/shoes" class="nav2 position-relative text-secondary">
+              <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'shoes' }}" class="nav2 position-relative text-secondary">
                 Shoes
                 <div class="point position-absolute rounded bg-danger"></div>
               </router-link>
             </li>
             <li class="nav-link px-2 mx-1">
-              <router-link to="/all/bag" class="nav2 position-relative text-secondary">
+              <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'bag' }}" class="nav2 position-relative text-secondary">
                 Bag
                 <div class="point position-absolute rounded bg-danger"></div>
               </router-link>
@@ -131,10 +130,6 @@ export default {
     // route
     const group = computed(() => route.params.group)
     const type = computed(() => route.params.type)
-    const aaa = () => {
-      if (group.value) console.log(group.value)
-      if (type.value) console.log(type.value)
-    }
 
     // router
     const toShopInfo = (id) => {
@@ -170,6 +165,7 @@ export default {
     }
     return {
       group,
+      type,
       toShopInfo,
       fav,
       favInfo,
@@ -177,8 +173,7 @@ export default {
       cart,
       cartInfo,
       totalPrice,
-      removeCart,
-      aaa
+      removeCart
     }
   }
 }
