@@ -11,7 +11,9 @@
           <div class="counter-show text-center"><p class="d-inline align-middle m-0">{{count}}</p></div>
           <div @click="increase()" class="counter-button border text-center"><i class="fa fa-plus align-middle"></i></div>
         </div>
+        {{checkFav}}
         <button @click="addFav()">愛心加加</button>
+        <button @click="removeFav()">愛心刪刪</button>
         <button @click="addCart(id, count)">購物車加加</button>
       </div>
     </div>
@@ -45,10 +47,18 @@ export default {
       if (count.value >= 9) count.value = 9
     })
 
+    const checkFav = computed(() => {
+      const data = store.state.favorite.data
+      return data.some(i => i.id === id)
+    })
     const addFav = () => {
       // 將該產品id加入localStorage
-      store.commit('favorite/add', id.value)
+      store.commit('favorite/add', id)
       // 重新取得localStorage的資料
+      store.commit('favorite/getData')
+    }
+    const removeFav = () => {
+      store.commit('favorite/remove', id)
       store.commit('favorite/getData')
     }
 
@@ -61,7 +71,9 @@ export default {
       count,
       reduce,
       increase,
+      checkFav,
       addFav,
+      removeFav,
       addCart
     }
   }

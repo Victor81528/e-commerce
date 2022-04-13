@@ -2,13 +2,11 @@
   <div class="shop user-select-none">
     <div class="container">
       <div class="row mt-4">
-        <!-- <div v-if="products.length === 0">
+        <div v-if="filteredPro.length === 0">
           目前沒有商品喔~
-        </div> -->
-        <!-- <div v-for="(i, index) of products" :key="index">
-          {{i.fav}}
-        </div> -->
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2 position-relative mb-5" v-for="item of products" :key="item.id">
+        </div>
+        {{filteredPro}}
+        <div class="col-6 col-md-4 col-lg-3 col-xl-2 position-relative mb-5" v-for="item of filteredPro" :key="item.id">
           <ProductCard :item="item" />
         </div>
       </div>
@@ -32,12 +30,11 @@ export default {
     const route = useRoute()
     const group = computed(() => route.params.group)
     const type = computed(() => route.params.type)
-    const products = computed(() => store.getters[`products/${type.value}`])
-
+    const filteredPro = computed(() => store.getters['products/filteredPro']({ group: group.value, type: type.value }))
     return {
       group,
       type,
-      products
+      filteredPro
     }
   }
 }

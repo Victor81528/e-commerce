@@ -7,8 +7,7 @@ const state = {
       desc: 'List from stylist Hannah Berns',
       price: 499,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 2,
@@ -17,8 +16,7 @@ const state = {
       desc: 'List from stylist Jogn Greenwood',
       price: 5200,
       gender: 1,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 3,
@@ -27,8 +25,7 @@ const state = {
       desc: 'List from stylist Ben Gordon',
       price: 1769,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 4,
@@ -37,8 +34,7 @@ const state = {
       desc: 'List from stylist Norman Cage',
       price: 320,
       gender: 2,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 5,
@@ -47,8 +43,7 @@ const state = {
       desc: 'List from stylist Tom Ray',
       price: 599,
       gender: 1,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 6,
@@ -57,8 +52,7 @@ const state = {
       desc: 'List from stylist Tom Ray',
       price: 1850,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 7,
@@ -67,8 +61,7 @@ const state = {
       desc: 'List from stylist Tom Ray',
       price: 7200,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 8,
@@ -77,8 +70,7 @@ const state = {
       desc: 'New colors arrival',
       price: 400,
       gender: 2,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 9,
@@ -87,8 +79,7 @@ const state = {
       desc: 'Classic Landing Shoes',
       price: 700,
       gender: 2,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 10,
@@ -97,8 +88,7 @@ const state = {
       desc: 'Young! Sexy!',
       price: 1340,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 11,
@@ -107,8 +97,7 @@ const state = {
       desc: 'Retro fashion',
       price: 999,
       gender: 1,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 12,
@@ -117,8 +106,7 @@ const state = {
       desc: 'Dating outfit',
       price: 690,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 13,
@@ -127,8 +115,7 @@ const state = {
       desc: 'Praise the sun!',
       price: 399,
       gender: 1,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 14,
@@ -137,8 +124,7 @@ const state = {
       desc: 'Be with you when working',
       price: 550,
       gender: 1,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 15,
@@ -147,8 +133,7 @@ const state = {
       desc: 'Hmmmmm...',
       price: 6990,
       gender: 1,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 16,
@@ -157,8 +142,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 10600,
       gender: 1,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 17,
@@ -167,8 +151,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 3600,
       gender: 0,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 18,
@@ -177,8 +160,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 4200,
       gender: 0,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 19,
@@ -187,8 +169,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2560,
       gender: 2,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 20,
@@ -197,8 +178,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 12500,
       gender: 1,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 21,
@@ -207,8 +187,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 7280,
       gender: 2,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 22,
@@ -217,8 +196,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 7280,
       gender: 1,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 23,
@@ -227,8 +205,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 24,
@@ -237,8 +214,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 25,
@@ -247,8 +223,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 2,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 26,
@@ -257,8 +232,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 2,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 27,
@@ -267,8 +241,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 1,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 28,
@@ -277,8 +250,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 2,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 29,
@@ -287,8 +259,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 30,
@@ -297,8 +268,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 31,
@@ -307,8 +277,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 32,
@@ -317,8 +286,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 2,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 33,
@@ -327,8 +295,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 1,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 34,
@@ -337,8 +304,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 2,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 35,
@@ -347,8 +313,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 36,
@@ -357,8 +322,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 37,
@@ -367,8 +331,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 38,
@@ -377,8 +340,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 2,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 39,
@@ -387,8 +349,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 40,
@@ -397,8 +358,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 2,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 41,
@@ -407,8 +367,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 1,
-      type: 2,
-      fav: 0
+      type: 2
     },
     {
       id: 42,
@@ -417,8 +376,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 43,
@@ -427,8 +385,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 44,
@@ -437,8 +394,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 45,
@@ -447,8 +403,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 1,
-      fav: 0
+      type: 1
     },
     {
       id: 46,
@@ -457,8 +412,7 @@ const state = {
       desc: 'For halloween, may be...',
       price: 2350,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     },
     {
       id: 47,
@@ -467,38 +421,23 @@ const state = {
       desc: 'For halloween, may be...',
       price: 32690,
       gender: 0,
-      type: 0,
-      fav: 0
+      type: 0
     }
   ]
 }
 
 const getters = {
-  selected: (state, getters, rootState) => {
-    const fav = rootState.favorite.data
-    state.list.forEach(i => {
-      fav.forEach(j => {
-        if (i.id === j.id) i.fav = 1
-      })
-    })
-  },
-  all: (state, getters, rootState) => {
-    const fav = rootState.favorite.data
-    state.list.forEach(i => {
-      fav.forEach(j => {
-        if (i.id === j.id) i.fav = 1
-      })
-    })
-    return state.list
-  },
-  clothing: () => {
-    return state.list.filter(i => i.type === 0)
-  },
-  shoes: () => {
-    return state.list.filter(i => i.type === 1)
-  },
-  bag: () => {
-    return state.list.filter(i => i.type === 2)
+  filteredPro: (state, getters, rootState) => (param) => {
+    const { group, type } = param
+    let a
+    if (group === 'all') a = state.list
+    else if (group === 'women') a = state.list.filter(i => i.gender === 0 || i.gender === 2)
+    else if (group === 'men') a = state.list.filter(i => i.gender === 1 || 2)
+
+    if (type === 'clothing') a = a.filter(i => i.type === 0)
+    else if (type === 'shoes') a = a.filter(i => i.type === 1)
+    else if (type === 'bag') a = a.filter(i => i.type === 2)
+    return a
   },
   getProInfo: (state) => (id) => {
     return state.list.filter(i => i.id === id)[0]

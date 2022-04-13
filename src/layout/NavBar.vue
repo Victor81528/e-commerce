@@ -144,7 +144,6 @@ export default {
 
     // 追蹤清單
     store.commit('favorite/getData')
-    const fav = computed(() => store.state.favorite.data)
     const favInfo = computed(() => store.getters['favorite/favInfo'])
     const removeFav = (id) => {
       store.commit('favorite/remove', id)
@@ -167,7 +166,6 @@ export default {
       group,
       type,
       toShopInfo,
-      fav,
       favInfo,
       removeFav,
       cart,
