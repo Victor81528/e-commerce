@@ -1,5 +1,5 @@
 <template>
-<div class="navbar py-0">
+<div class="navbar w-100 py-0">
   <!-- nav1 -->
   <div class="w-100 bg-dark user-select-none">
     <div class="container">
@@ -80,9 +80,6 @@
             </li>
           </ul>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
       </div>
     </div>
   </div>
@@ -104,10 +101,10 @@
               <i class="fa-solid fa-xmark" @click="removeCart(item.id)"></i>
             </li>
           </ul>
-          總Total: {{totalPrice}}
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <div class="modal-footer d-flex justify-content-between">
+          總Total: {{totalPrice}}
+          <div class="checkOut py-2 px-3 text-center bg-black text-white" data-bs-dismiss="modal">結帳</div>
         </div>
       </div>
     </div>
@@ -179,6 +176,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.navbar {
+  // position: fixed;
+  // z-index: 2;
+}
 .nav1 {
   font-size: 9px;
   transition: 0.3s;
@@ -233,6 +234,13 @@ export default {
   i {
     font-size: 22px;
     cursor: pointer;
+  }
+}
+.checkOut {
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    opacity: 70%;
   }
 }
 </style>

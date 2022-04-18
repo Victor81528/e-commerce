@@ -1,13 +1,15 @@
 const state = {
   handPickedDaily: [
     {
+      id: 1,
       title: 'Must Have',
       img: '/img/product/01.jpeg',
       desc: 'List from stylist Hannah Berns',
       linkTitle: 'Discover the new collection',
-      link: ''
+      link: '/shopinfo/1'
     },
     {
+      id: 2,
       title: 'New Arrival',
       img: '/img/product/02.jpeg',
       desc: 'List from stylist Jogn Greenwood',
@@ -15,6 +17,7 @@ const state = {
       link: ''
     },
     {
+      id: 3,
       title: 'The Look',
       img: '/img/product/03.jpeg',
       desc: 'List from stylist Ben Gordon',
@@ -22,6 +25,7 @@ const state = {
       link: ''
     },
     {
+      id: 4,
       title: 'Insta Shock',
       img: '/img/product/04.jpeg',
       desc: 'List from stylist Norman Cage',
@@ -29,6 +33,7 @@ const state = {
       link: ''
     },
     {
+      id: 5,
       title: 'Just Chill',
       img: '/img/product/05.jpeg',
       desc: 'List from stylist Tom Ray',
@@ -36,6 +41,7 @@ const state = {
       link: ''
     },
     {
+      id: 6,
       title: 'Hot Selling',
       img: '/img/product/06.jpeg',
       desc: 'List from stylist Tom Ray',
@@ -43,6 +49,7 @@ const state = {
       link: ''
     },
     {
+      id: 7,
       title: 'Just Chill',
       img: '/img/product/07.jpeg',
       desc: 'List from stylist Tom Ray',
@@ -52,48 +59,56 @@ const state = {
   ],
   trendingNow: [
     {
+      id: 8,
       title: 'Maculay 03',
       img: '/img/product/08.jpeg',
       desc: 'New colors arrival',
       link: ''
     },
     {
+      id: 9,
       title: 'Vender outlander',
       img: '/img/product/09.jpeg',
       desc: 'Classic Landing Shoes',
       link: ''
     },
     {
+      id: 10,
       title: 'One Pinker',
       img: '/img/product/10.jpeg',
       desc: 'Young! Sexy!',
       link: ''
     },
     {
+      id: 11,
       title: 'Vintage 1970s',
       img: '/img/product/11.jpeg',
       desc: 'Retro fashion',
       link: ''
     },
     {
+      id: 12,
       title: 'W601 S22',
       img: '/img/product/12.jpeg',
       desc: 'Dating outfit',
       link: ''
     },
     {
+      id: 13,
       title: 'Solaire of Astora',
       img: '/img/product/13.jpeg',
       desc: 'Praise the sun!',
       link: ''
     },
     {
+      id: 14,
       title: 'W202',
       img: '/img/product/14.jpeg',
       desc: 'Be with you when working',
       link: ''
     },
     {
+      id: 15,
       title: 'wandering 03',
       img: '/img/product/15.jpeg',
       desc: 'Hmmmmm...',

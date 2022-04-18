@@ -19,14 +19,21 @@ export default {
   },
   setup () {
     const store = useStore()
+    const banner = computed(() => store.state.banner.data)
+    const handPickedDaily = computed(() => store.state.slidecard.handPickedDaily)
+    const trendingNow = computed(() => store.state.slidecard.trendingNow)
     return {
-      banner: computed(() => store.state.banner.data),
-      handPickedDaily: computed(() => store.state.slidecard.handPickedDaily),
-      trendingNow: computed(() => store.state.slidecard.trendingNow)
+      banner,
+      handPickedDaily,
+      trendingNow
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.home {
+  flex-grow: 1;
+  margin-top: 98px;
+}
 </style>

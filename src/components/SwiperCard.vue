@@ -1,10 +1,10 @@
 <template>
-  <div class="swiper-card user-select-none">
-    <div class="container my-5">
+  <div class="swiper-card user-select-none overflow-hidden">
+    <div class="container  my-3 my-md-5 mx-3 mx-md-auto">
       <div class="swiper" ref="swiperEle">
         <div class="d-flex justify-content-between mt-3">
           <h3 class="d-block ps-3 mb-4">{{title}}</h3>
-          <div class="d-flex navigation align-self-end mb-1 me-2">
+          <div class="d-none d-md-flex navigation align-self-end mb-1 me-2">
             <div class="nav-button d-flex justify-content-center align-items-center rounded-circle bg-dark" :class="{'disallow': prevDisallowed}" ref="prevButton">
               <i class="fa-solid fa-angle-left text-white"></i>
             </div>
@@ -15,9 +15,9 @@
         </div>
         <hr>
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item, index) of data" :key="index">
+          <div class="swiper-slide" v-for="(item, index) of data" :key="index" @click="toShopInfo(item.id)">
             <div class="blur">
-              <img class="" :src="item.img" alt="">
+              <img :src="item.img" alt="">
             </div>
             <h5 class="mt-2 mb-1">{{item.title}}</h5>
             <p class="text-secondary">{{item.desc}}</p>
@@ -30,6 +30,7 @@
 
 <script>
 import { onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import Swiper, { Navigation } from 'swiper'
 import 'swiper/swiper-bundle.min.css'
 
@@ -37,6 +38,8 @@ export default {
   name: 'SwiperCard',
   props: ['data', 'title'],
   setup () {
+    const router = useRouter()
+
     let swiper = null
     const swiperEle = ref(null)
     const prevButton = ref(null)
@@ -71,8 +74,9 @@ export default {
             spaceBetween: 18
           }
         },
-        speed: 500,
+        slidesPerView: 'auto',
         spaceBetween: 20,
+        speed: 500,
         on: {
           reachBeginning: () => {
             prevDisallowed.value = true
@@ -88,13 +92,23 @@ export default {
       })
     })
 
+    const toShopInfo = (id) => {
+      router.push({
+        name: 'Shop_info',
+        params: {
+          id: id
+        }
+      })
+    }
+
     return {
       swiper,
       swiperEle,
       prevButton,
       nextButton,
       prevDisallowed,
-      nextDisallowed
+      nextDisallowed,
+      toShopInfo
     }
   }
 }
@@ -111,15 +125,10 @@ hr {
 .swiper {
   width: 100%;
   height: 100%;
+  overflow: visible;
   .swiper-slide {
+    width: 60%;
     cursor: pointer;
-    &:hover {
-      .blur {
-        img {
-          filter: blur(5px);
-        }
-      }
-    }
     .blur {
       overflow: hidden;
       border-radius: 16px;
@@ -129,6 +138,15 @@ hr {
         object-fit: cover;
         -webkit-user-drag: none;
         transition: 0.25s;
+        &:hover {
+          filter: blur(4px);
+        }
+        @media screen and (max-width: 768px) {
+          height: 300px;
+          &:hover {
+            filter: none;
+          }
+        }
       }
     }
     h5 {

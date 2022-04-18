@@ -1,5 +1,5 @@
 <template>
-  <div class="banner user-select-none">
+  <div class="banner d-none d-md-flex user-select-none">
     <div class="swiper" ref="swiperEle">
       <div class="swiper-button start-0" ref="prevButton">
         <div class="swiper-button-prev text-light"></div>
@@ -12,7 +12,7 @@
           <img class="w-100" :src="item.img" alt="">
           <h5 class="text-white" v-html="item.title"></h5>
           <p v-html="item.desc"></p>
-          <a href="/" v-html="item.linkTitle"></a>
+          <a :href="item.link" v-html="item.linkTitle"></a>
         </div>
       </div>
     </div>
@@ -86,8 +86,14 @@ export default {
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
-      font-size: 100px;
+      font-size: 150px;
       white-space: nowrap;
+      @media screen and (max-width: 1400px) {
+        font-size: 110px;
+      }
+      @media screen and (max-width: 1200px) {
+        font-size: 80px;
+      }
     }
     p {
       position: absolute;

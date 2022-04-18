@@ -30,4 +30,14 @@ export default {
 .v-enter-to, .v-leave-from {
   opacity: 1;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+#app {
+  display: flex; /*使物件依序排列*/
+  flex-direction: column; /*使物件垂直排列*/
+  height: 100%;
+}
 </style>
