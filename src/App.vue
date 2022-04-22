@@ -4,15 +4,18 @@
     <router-view/>
   </transition>
   <Footer/>
+  <Modal/>
 </template>
 
 <script>
 import NavBar from '@/layout/NavBar'
 import Footer from '@/layout/Footer'
+import Modal from '@/layout/Modal'
 export default {
   components: {
     NavBar,
-    Footer
+    Footer,
+    Modal
   },
   setup () {
   }

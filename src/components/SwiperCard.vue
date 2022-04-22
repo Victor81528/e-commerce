@@ -1,9 +1,9 @@
 <template>
   <div class="swiper-card user-select-none overflow-hidden">
-    <div class="container  my-3 my-md-5 mx-3 mx-md-auto">
+    <div class="container-md my-3 my-md-5 mx-3 mx-md-auto">
       <div class="swiper" ref="swiperEle">
         <div class="d-flex justify-content-between mt-3">
-          <h3 class="d-block ps-3 mb-4">{{title}}</h3>
+          <h3 class="d-block ps-md-3 mb-4">{{title}}</h3>
           <div class="d-none d-md-flex navigation align-self-end mb-1 me-2">
             <div class="nav-button d-flex justify-content-center align-items-center rounded-circle bg-dark" :class="{'disallow': prevDisallowed}" ref="prevButton">
               <i class="fa-solid fa-angle-left text-white"></i>
@@ -31,7 +31,7 @@
 <script>
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import Swiper, { Navigation } from 'swiper'
+import Swiper, { Navigation, FreeMode } from 'swiper'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
@@ -49,34 +49,32 @@ export default {
 
     onMounted(() => {
       swiper = new Swiper(swiperEle.value, {
-        modules: [Navigation],
+        modules: [Navigation, FreeMode],
         navigation: {
           prevEl: prevButton.value,
           nextEl: nextButton.value
         },
+        // freeMode: true,
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        speed: 500,
         breakpoints: {
           // when window width is >= 640px
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 20
+          576: {
+            slidesPerView: 2
           },
-          992: {
-            slidesPerView: 3,
+          768: {
+            // allowTouchMove: false,
             spaceBetween: 20
           },
           1200: {
-            slidesPerView: 4,
-            spaceBetween: 20
+            slidesPerView: 4
           },
           1400: {
-            allowTouchMove: false,
             slidesPerView: 5,
             spaceBetween: 18
           }
         },
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-        speed: 500,
         on: {
           reachBeginning: () => {
             prevDisallowed.value = true

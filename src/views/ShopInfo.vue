@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row position-relative">
         <div class="img-container col-6">
-          <img :src="productInfo.img" alt="">
+          <img :src="productInfo.img">
         </div>
         <div class="col-6 d-flex flex-column">
           <div class="d-flex">
@@ -54,8 +54,8 @@ export default {
     const route = useRoute()
 
     // 取得route.params並轉成number
-    const id = parseInt(route.params.id)
-    const productInfo = computed(() => store.getters['products/getProInfo'](id))
+    const id = computed(() => route.params.id)
+    const productInfo = computed(() => store.getters['products/getProInfo'](parseInt(id.value)))
 
     // counter
     const count = ref(1)
@@ -72,15 +72,15 @@ export default {
 
     const checkFav = computed(() => {
       const data = store.state.favorite.data
-      return data.some(i => i.id === id)
+      return data.some(i => i.id === parseInt(id.value))
     })
-    const addFav = () => {
+    const addFav = (id) => {
       // 將該產品id加入localStorage
       store.commit('favorite/add', id)
       // 重新取得localStorage的資料
       store.commit('favorite/getData')
     }
-    const removeFav = () => {
+    const removeFav = (id) => {
       store.commit('favorite/remove', id)
       store.commit('favorite/getData')
     }
@@ -95,6 +95,7 @@ export default {
       }, 1500)
     }
     return {
+      id,
       productInfo,
       count,
       reduce,

@@ -27,11 +27,10 @@ const mutations = {
       id: id
     }
     // 判斷是否為空、重複id
-    if (favorite === null) favorite = [good]
+    if (favorite === null || favorite === []) favorite = [good]
     else {
       let isNew = true
       favorite = JSON.parse(favorite)
-
       favorite.forEach(i => {
         if (i.id === good.id) {
           isNew = false

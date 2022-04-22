@@ -34,7 +34,7 @@ const mutations = {
       qty: count
     }
     // 判斷是否為空、重複id
-    if (cart === null) cart = [good]
+    if (cart === null || cart === []) cart = [good]
     else {
       let isNew = true
       cart = JSON.parse(cart)
