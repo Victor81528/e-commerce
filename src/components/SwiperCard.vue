@@ -1,6 +1,6 @@
 <template>
   <div class="swiper-card user-select-none overflow-hidden">
-    <div class="container-md my-3 my-md-5 mx-3 mx-md-auto">
+    <div class="container-md my-3 my-md-5 mx-0 mx-md-auto">
       <div class="swiper" ref="swiperEle">
         <div class="d-flex justify-content-between mt-3">
           <h3 class="d-block ps-md-3 mb-4">{{title}}</h3>
@@ -61,7 +61,7 @@ export default {
         breakpoints: {
           // when window width is >= 640px
           576: {
-            slidesPerView: 2
+            slidesPerView: 3
           },
           768: {
             // allowTouchMove: false,

@@ -30,7 +30,7 @@
           </h1>
           <ul class="nav py-3">
             <li class="nav-link d-block d-md-none px-0" >
-              <i class="text-dark fa-solid fa-bars" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"></i>
+              <i class="fa-solid fa-bars  text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"></i>
             </li>
             <li class="nav-link d-none d-md-block ps-0 pe-2 me-1">
               <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'all' }}" class="nav2 position-relative text-secondary">
@@ -58,20 +58,20 @@
             </li>
           </ul>
           <ul class="nav align-items-center">
-            <li class="nav3 nav-link px-3 text-dark" data-bs-toggle="modal" data-bs-target="#fav"><i class="fa-solid fa-heart"></i></li>
-            <li class="nav3 nav-link px-2 pe-0 text-dark" data-bs-toggle="modal" data-bs-target="#cart"><i class="fas fa-bag-shopping"></i></li>
+            <li class="nav3 nav-link px-3 text-dark" data-bs-toggle="offcanvas" data-bs-target="#fav"><i class="fa-solid fa-heart"></i></li>
+            <li class="nav3 nav-link px-2 pe-0 text-dark" data-bs-toggle="offcanvas" data-bs-target="#cart"><i class="fas fa-bag-shopping"></i></li>
           </ul>
         </nav>
       </div>
     </div>
   </div>
   <!-- 折疊menu -->
-  <div class="offcanvas offcanvas-top d-md-none" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+  <div class="offcanvas offcanvas-top d-md-none" tabindex="-1" id="offcanvasMenu">
     <div class="offcanvas-header justify-content-center">
       <h5 class="offcanvas-title " id="offcanvasMenuLabel">Menu</h5>
     </div>
-    <div class="offcanvas-body">
-      <ul class="py-3">
+    <div class="offcanvas-body flex-grow-0">
+      <ul class="py-3 px-0">
         <li class="nav-link px-2 mx-1" data-bs-dismiss="offcanvas">
           <router-link :to="{ name: 'Shop', params: { group: 'all', type: type || 'all' }}"
             class="nav2 text-secondary py-1">
@@ -92,7 +92,7 @@
         </li>
       </ul>
       <hr>
-      <ul class="py-3">
+      <ul class="py-3 px-0">
         <li class="nav-link px-2 mx-1" data-bs-dismiss="offcanvas">
           <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'all' }}" class="nav2 position-relative text-secondary">
             All
@@ -184,6 +184,6 @@ export default {
   }
 }
 #offcanvasMenu {
-  height: 75vh;
+  height: 540px;
 }
 </style>

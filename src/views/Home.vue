@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home mb-5">
     <Banner :banner="banner"/>
     <SwiperCard :data="handPickedDaily" title="Hand-picked Daily"/>
     <SwiperCard :data="trendingNow" title="Trending Now"/>

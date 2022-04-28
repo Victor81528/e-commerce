@@ -1,7 +1,7 @@
 <template>
-  <div class="shop user-select-none">
-    <div class="container-md">
-      <div class="row mt-4">
+  <div class="shop w-100 user-select-none">
+    <div class="container-md mb-5">
+      <div class="row mt-4 gx-2 gx-md-4">
         <div v-if="filteredPro.length === 0">
           目前沒有商品喔~
         </div>
@@ -43,5 +43,8 @@ export default {
 .shop {
   flex-grow: 1;
   margin-top: 98px;
+  @media screen and (max-width: 768px) {
+    margin-top: 72px;
+  }
 }
 </style>

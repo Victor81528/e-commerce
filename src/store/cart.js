@@ -27,11 +27,11 @@ const mutations = {
     state.data = localStorage.getItem('cart')
     state.data = JSON.parse(state.data) || []
   },
-  add: (state, { id, count }) => {
+  add: (state, { id, qty }) => {
     let cart = localStorage.getItem('cart')
     const good = {
       id: id,
-      qty: count
+      qty: qty
     }
     // 判斷是否為空、重複id
     if (cart === null || cart === []) cart = [good]

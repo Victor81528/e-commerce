@@ -4,18 +4,18 @@
     <router-view/>
   </transition>
   <Footer/>
-  <Modal/>
+  <SideList/>
 </template>
 
 <script>
 import NavBar from '@/layout/NavBar'
 import Footer from '@/layout/Footer'
-import Modal from '@/layout/Modal'
+import SideList from '@/layout/SideList'
 export default {
   components: {
     NavBar,
     Footer,
-    Modal
+    SideList
   },
   setup () {
   }
