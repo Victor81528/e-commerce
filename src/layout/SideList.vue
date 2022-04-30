@@ -154,7 +154,7 @@ export default {
       word-break: keep-all;
       @media screen and (min-width: 768px) {
         &:hover {
-          opacity: 60%;
+          opacity: 0.3;
         }
       }
     }
@@ -164,7 +164,7 @@ export default {
   cursor: pointer;
   transition: 0.3s;
   &:hover {
-    opacity: 70%;
+    opacity: 0.7;
   }
 }
 </style>

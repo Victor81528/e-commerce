@@ -83,7 +83,7 @@ h4 {
   transition: 0.3s;
   @media screen and (min-width: 768px) {
     &:hover {
-      opacity: 60%;
+      opacity: 0.6;
     }
   }
 }
@@ -96,7 +96,7 @@ i {
   transition: 0.3s;
   @media screen and (min-width: 768px) {
     &:hover {
-      opacity: 30%;
+      opacity: 0.3;
     }
   }
 }

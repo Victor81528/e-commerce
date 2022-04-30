@@ -179,7 +179,7 @@ export default {
 .nav3 {
   transition: 0.3s;
   &:hover {
-    opacity: 30%;
+    opacity: 0.3;
     cursor: pointer;
   }
 }

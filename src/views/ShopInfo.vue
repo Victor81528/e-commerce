@@ -200,7 +200,7 @@ export default {
   transition: 0.3s;
   @media screen and (min-width: 768px) {
     &:hover {
-      opacity: 30%;
+      opacity: 0.3;
     }
   }
 }
@@ -209,7 +209,7 @@ export default {
   transition: 0.3s;
   @media screen and (min-width: 768px) {
     &:hover {
-      opacity: 70%;
+      opacity: 0.7;
     }
   }
 }
@@ -218,6 +218,6 @@ export default {
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 90%;
+  opacity: 0.9
 }
 </style>
