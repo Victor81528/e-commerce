@@ -21,7 +21,7 @@ export default {
   props: [
     'item'
   ],
-  setup () {
+  setup (props) {
     const store = useStore()
     const router = useRouter()
 
