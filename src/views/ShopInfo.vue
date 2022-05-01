@@ -41,7 +41,7 @@
               class="size border border-dark text-center py-3 p-sm-2">XXL</div>
           </div>
           <div class="add mt-auto p-3 text-center bg-black text-white" @click="addCart(productInfo.id, count)">加入購物車</div>
-          <div v-show="alert" class="alert position-absolute bg-dark p-5">成功加入購物車</div>
+          <div v-show="alert" class="alert position-fixed bg-dark p-5">成功加入購物車</div>
         </div>
       </div>
     </div>
