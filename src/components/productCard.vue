@@ -24,7 +24,6 @@ export default {
   setup (props) {
     const store = useStore()
     const router = useRouter()
-
     const checkFav = computed(() => {
       const data = store.state.favorite.data
       return data.some(i => i.id === props.item.id)
@@ -79,6 +78,7 @@ export default {
 h4 {
   font-family: 'Jost';
   font-weight: 400;
+  word-break: break-word;
   cursor: pointer;
   transition: 0.3s;
   @media screen and (min-width: 768px) {
