@@ -25,7 +25,7 @@
         <nav class="d-flex flex-row position-relative w-100 justify-content-between">
           <h1 class="navbar-brand d-flex position-absolute top-50 start-50 my-auto"
             style="transform: translate(-50%,-50%);vertical-align: middle">
-            <a :href="process.env.VUE_APP_PATH" class="align-center text-dark text-decoration-none"
+            <a :href="home" class="align-center text-dark text-decoration-none"
               style="vertical-align: middle;font-family: 'Krona one';font-size: 21px; font-weight: 600">Kjølig</a>
           </h1>
           <ul class="nav py-3">
@@ -132,9 +132,12 @@ export default {
     const group = computed(() => route.params.group)
     const type = computed(() => route.params.type)
 
+    const home = process.env.VUE_APP_PATH
+
     return {
       group,
-      type
+      type,
+      home
     }
   }
 }
