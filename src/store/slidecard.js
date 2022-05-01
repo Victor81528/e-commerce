@@ -6,7 +6,7 @@ const state = {
       img: process.env.VUE_APP_PATH + '/img/product/01.jpeg',
       desc: 'List from stylist Hannah Berns',
       linkTitle: 'Discover the new collection',
-      link: '/shopinfo/1'
+      link: ''
     },
     {
       id: 2,

@@ -218,6 +218,13 @@ export default {
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0.9
+  opacity: 0.9;
+  word-break: keep-all;
+  @media screen and (min-width: 576px) {
+    padding: {
+      left: 100px!important;
+      right: 100px!important;
+    }
+  }
 }
 </style>
