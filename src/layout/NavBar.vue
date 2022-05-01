@@ -5,7 +5,7 @@
     <div class="container-md">
       <div class="row">
         <nav class="d-flex py-0" style="font-family: 'Jost';font-weight: 600;">
-          <router-link :to="{ name: 'Shop', params: { group: 'all', type: type || 'all' }}" class="nav1 nav-link text-secondary px-0 py-1">
+          <router-link :to="{ name: 'Shop', params: { group: 'all', type: type || 'all' }}" class="nav1 nav-link text-secondary ps-0 py-1 me-1">
             ALL
           </router-link>
           <router-link :to="{ name: 'Shop', params: { group: 'women', type: type || 'all' }}" class="nav1 nav-link text-secondary py-1 mx-1">
