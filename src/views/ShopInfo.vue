@@ -14,7 +14,7 @@
           <hr class="d-none d-sm-block my-4">
           <div class="d-flex justify-content-between align-items-center mt-4 mb-5">
             <h5 class="m-0"><span class="d-none d-sm-inline me-3">售價</span>$ {{productInfo.price}}</h5>
-            <i v-if="!checkFav" class="fav fa-regular fa-heart text-secondary" @click="addFav(productInfo.id)"></i>
+            <i v-if="!checkFav" class="fav fa-regular fa-heart text-secondary pe-1 pe-sm-0" @click="addFav(productInfo.id)"></i>
             <i v-else class="fav fa-solid fa-heart text-danger align-middle" @click="removeFav(productInfo.id)"></i>
           </div>
           <div class="counter-container d-flex align-items-center mb-5">
@@ -171,12 +171,14 @@ export default {
     // font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
+    @media screen and (min-width: 768px) {
+      &:hover {
+        background-color: #EBE5DC;
+      }
+    }
     @media screen and (max-width: 992px) {
       width: 20%;
       max-width: unset;
-    }
-    &:hover {
-      background-color: #EBE5DC;
     }
   }
   .size-check {

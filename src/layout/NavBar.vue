@@ -59,7 +59,7 @@
           </ul>
           <ul class="nav align-items-center">
             <li class="nav3 nav-link px-3 text-dark" data-bs-toggle="offcanvas" data-bs-target="#fav"><i class="fa-solid fa-heart"></i></li>
-            <li class="nav3 nav-link px-2 pe-0 text-dark" data-bs-toggle="offcanvas" data-bs-target="#cart"><i class="fas fa-bag-shopping"></i></li>
+            <li class="nav3 nav-link px-2 pe-1 pe-sm-0 text-dark" data-bs-toggle="offcanvas" data-bs-target="#cart"><i class="fas fa-bag-shopping"></i></li>
           </ul>
         </nav>
       </div>
@@ -72,44 +72,48 @@
     </div>
     <div class="offcanvas-body flex-grow-0">
       <ul class="py-3 px-0">
-        <li class="nav-link px-2 mx-1" data-bs-dismiss="offcanvas">
+        <li class="nav-link px-2 mx-1 py-0 my-1" data-bs-dismiss="offcanvas">
           <router-link :to="{ name: 'Shop', params: { group: 'all', type: type || 'all' }}"
-            class="nav2 text-secondary py-1">
+            class="nav2 d-block text-secondary py-2">
             All
           </router-link>
         </li>
-        <li class="nav-link px-2 mx-1" data-bs-dismiss="offcanvas">
+        <li class="nav-link px-2 mx-1 py-0 my-1" data-bs-dismiss="offcanvas">
           <router-link :to="{ name: 'Shop', params: { group: 'women', type: type || 'all' }}"
-            class="nav2 text-secondary py-1">
+            class="nav2 d-block text-secondary py-2">
             Women
           </router-link>
         </li>
-        <li class="nav-link px-2 mx-1" data-bs-dismiss="offcanvas">
+        <li class="nav-link px-2 mx-1 py-0 my-1" data-bs-dismiss="offcanvas">
           <router-link :to="{ name: 'Shop', params: { group: 'men', type: type || 'all' }}"
-            class="nav2 text-secondary py-1">
+            class="nav2 d-block text-secondary py-2">
             Men
           </router-link>
         </li>
       </ul>
       <hr>
       <ul class="py-3 px-0">
-        <li class="nav-link px-2 mx-1" data-bs-dismiss="offcanvas">
-          <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'all' }}" class="nav2 position-relative text-secondary">
+        <li class="nav-link px-2 mx-1 py-0 my-1" data-bs-dismiss="offcanvas">
+          <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'all' }}"
+            class="nav2 d-block text-secondary py-2">
             All
           </router-link>
         </li>
-        <li class="nav-link px-2 mx-1" data-bs-dismiss="offcanvas">
-          <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'clothing' }}" class="nav2 position-relative text-secondary">
+        <li class="nav-link px-2 mx-1 py-0 my-1" data-bs-dismiss="offcanvas">
+          <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'clothing' }}"
+            class="nav2 d-block text-secondary py-2">
             Clothing
           </router-link>
         </li>
-        <li class="nav-link px-2 mx-1" data-bs-dismiss="offcanvas">
-          <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'shoes' }}" class="nav2 position-relative text-secondary">
+        <li class="nav-link px-2 mx-1 py-0 my-1" data-bs-dismiss="offcanvas">
+          <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'shoes' }}"
+            class="nav2 d-block text-secondary py-2">
             Shoes
           </router-link>
         </li>
-        <li class="nav-link px-2 mx-1" data-bs-dismiss="offcanvas">
-          <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'bag' }}" class="nav2 position-relative text-secondary">
+        <li class="nav-link px-2 mx-1 py-0 my-1" data-bs-dismiss="offcanvas">
+          <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'bag' }}"
+            class="nav2 d-block text-secondary py-2">
             Bag
           </router-link>
         </li>
