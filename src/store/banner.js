@@ -4,7 +4,7 @@ const state = {
       title: 'Valentine’s day',
       img: process.env.VUE_APP_PATH + '/img/banner/01.jpeg',
       linkTitle: 'Discover the new collection',
-      link: process.env.VUE_APP_PATH + '/men/clothing'
+      link: '/men/clothing'
     },
     {
       title: 'Bolas <span style="color: black">x</span> Kjølig',
