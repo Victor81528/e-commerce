@@ -1,24 +1,25 @@
-# e-commerce
+# 衣著電子商務網站實作
 
-## Project setup
-```
-npm install
-```
+[點我點我](https://victor81528.github.io/e-commerce/)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+使用：
+- Vue3 Composition API
+- Vuex
+- Vue-Router
+- Git
+- BootStrap
 
-### Compiles and minifies for production
-```
-npm run build
-```
+原先想使用假API，但沒看到合用的...\
+JS方面著重元件切割與Vuex資料庫的分工\
+CSS互動效果與RWD\
+Vue CLI環境變數\
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+主要 breakpoint 為 ： 768px、576px\
+面向 device： 桌機、平板、手機\
+開發用瀏覽器： Edge 100 for macOS
+
+UI設計參考自
+[Figma community](https://www.figma.com/file/Qh6OjQBssKygmgBEZSDLDd/E-Commerce-Fashion-App-%26-Web.-%F0%9F%A6%84-freebies-(Community)?node-id=0%3A1)\
+作者： Alyöna Prokofieva\
+[作者的個人網站](https://dribbble.com/alyoskins/)
