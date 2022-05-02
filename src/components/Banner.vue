@@ -9,10 +9,10 @@
       </div>
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(item, index) of banner" :key="index">
-          <img class="w-100" :src="item.img" alt="">
+          <img class="w-100" :src="item.img" loading="lazy">
           <h5 class="text-white" v-html="item.title"></h5>
           <p v-html="item.desc"></p>
-          <a :href="item.link" v-html="item.linkTitle"></a>
+          <router-link :to="{ path: item.link }" v-html="item.linkTitle"/>
         </div>
       </div>
     </div>

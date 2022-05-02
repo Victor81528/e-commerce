@@ -17,7 +17,7 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(item, index) of data" :key="index" @click="toShopInfo(item.id)">
             <div class="blur">
-              <img :src="item.img" alt="">
+              <img :src="item.img" loading="lazy">
             </div>
             <h5 class="mt-2 mb-1">{{item.title}}</h5>
             <p class="text-secondary">{{item.desc}}</p>

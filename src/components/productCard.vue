@@ -1,7 +1,7 @@
 <template>
 <div class="border-0">
   <div class="blur">
-    <img :src="item.img" @click="toShopinfo(item.id)">
+    <img :src="item.img" @click="toShopinfo(item.id)" loading="lazy">
   </div>
   <h4 class="mt-2 mb-3 ms-1" @click="toShopinfo(item.id)">{{item.title}}</h4>
   <div class="d-flex justify-content-between align-items-center ms-1 me-1">
