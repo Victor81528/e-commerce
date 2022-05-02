@@ -68,8 +68,13 @@ export default {
     width: 15%;
     height: 100%;
     top: 0;
-    cursor: pointer;
     z-index: 11;
+    transition: 0.2s;
+    background-color: rgba(255,255,255, 0);
+    &:hover {
+      background-color: rgba(255,255,255, 0.3);
+      cursor: pointer;
+    }
     .swiper-button-prev {
       left: 50px;
     }
@@ -107,6 +112,10 @@ export default {
       bottom: 3%;
       left: 50%;
       transform: translate(-50%,-50%);
+      transition: 0.1s;
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
   button {

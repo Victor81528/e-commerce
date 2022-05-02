@@ -3,13 +3,13 @@ const state = {
     {
       title: 'Valentine’s day',
       img: process.env.VUE_APP_PATH + '/img/banner/01.jpeg',
-      linkTitle: 'Discover the new collection',
+      linkTitle: '<span style="color: white">Discover the new collection</span>',
       link: '/men/clothing'
     },
     {
       title: 'Bolas <span style="color: black">x</span> Kjølig',
       img: process.env.VUE_APP_PATH + '/img/banner/02.jpeg',
-      linkTitle: 'Discover the new collection',
+      linkTitle: '<span style="color: white">Discover the new collection</span>',
       link: '/women/clothing'
     },
     {
@@ -39,7 +39,7 @@ const state = {
     {
       title: "<span>Man's Soul<span>",
       img: process.env.VUE_APP_PATH + '/img/banner/07.jpeg',
-      linkTitle: '<span>Discover the new collection</span>',
+      linkTitle: '<span style="color: white">Discover the new collection</span>',
       link: '/men/shoes'
     }
   ]
