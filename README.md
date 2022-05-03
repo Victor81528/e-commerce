@@ -14,7 +14,6 @@ JS方面著重元件切割與Vuex資料庫的分工\
 CSS互動效果與RWD\
 Vue CLI環境變數\
 
-
 主要 breakpoint 為 ： 768px、576px\
 面向 device： 桌機、平板、手機\
 開發用瀏覽器： Edge 100 for macOS

@@ -1,7 +1,8 @@
 <template>
 <div class="border-0">
   <div class="blur">
-    <img :src="item.img" @click="toShopinfo(item.id)" loading="lazy">
+    <!-- <img :src="item.img" @click="toShopinfo(item.id)" loading="lazy"> -->
+    <img @click="toShopinfo(item.id)" src="/img/placeholder.jpeg" :data-src="item.img">
   </div>
   <h4 class="mt-2 mb-3 ms-1" @click="toShopinfo(item.id)">{{item.title}}</h4>
   <div class="d-flex justify-content-between align-items-center ms-1 me-1">
@@ -16,6 +17,7 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
+// import lazyload from './lazyload'
 export default {
   name: 'ProductCard',
   props: [
@@ -46,6 +48,8 @@ export default {
         }
       })
     }
+    // lazyload()
+
     return {
       checkFav,
       addFav,
