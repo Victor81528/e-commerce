@@ -2,7 +2,7 @@ const state = {
   list: [
     {
       id: 1,
-      title: 'Coluca Anfolifia white',
+      title: 'Coluca Anfolifia',
       img: process.env.VUE_APP_PATH + '/img/product/01.jpeg',
       desc: 'List from stylist Hannah Berns. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided.',
       price: 499,

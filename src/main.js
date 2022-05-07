@@ -5,5 +5,6 @@ import store from './store'
 import './_reset.css'
 import './scss/all.scss'
 import 'bootstrap'
+import VueLazyLoad from 'vue3-lazyload'
 
-createApp(App).use(store).use(router).mount('#app')
+createApp(App).use(store).use(router).use(VueLazyLoad).mount('#app')

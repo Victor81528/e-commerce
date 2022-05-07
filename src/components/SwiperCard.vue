@@ -17,7 +17,7 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(item, index) of data" :key="index" @click="toShopInfo(item.id)">
             <div class="blur">
-              <img :src="item.img" loading="lazy">
+              <img :src="item.img">
             </div>
             <h5 class="mt-2 mb-1">{{item.title}}</h5>
             <p class="text-secondary">{{item.desc}}</p>
@@ -54,17 +54,14 @@ export default {
           prevEl: prevButton.value,
           nextEl: nextButton.value
         },
-        // freeMode: true,
         slidesPerView: 'auto',
         spaceBetween: 10,
         speed: 500,
         breakpoints: {
-          // when window width is >= 640px
           576: {
             slidesPerView: 3
           },
           768: {
-            // allowTouchMove: false,
             spaceBetween: 20
           },
           1200: {
@@ -137,7 +134,7 @@ hr {
         -webkit-user-drag: none;
         transition: 0.25s;
         &:hover {
-          filter: blur(4px);
+          filter: brightness(80%) grayscale(80%);
         }
         @media screen and (max-width: 768px) {
           height: 300px;

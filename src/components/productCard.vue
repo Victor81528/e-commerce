@@ -1,11 +1,10 @@
 <template>
 <div class="border-0">
   <div class="blur">
-    <!-- <img :src="item.img" @click="toShopinfo(item.id)" loading="lazy"> -->
-    <img @click="toShopinfo(item.id)" src="/img/placeholder.jpeg" :data-src="item.img">
+    <img :class="{ 'twinkle': onTwinkle }" @click="toShopinfo(item.id)" v-lazy="{ src: false, lifecycle: lazyOptions.lifecycle }">
   </div>
-  <h4 class="mt-2 mb-3 ms-1" @click="toShopinfo(item.id)">{{item.title}}</h4>
-  <div class="d-flex justify-content-between align-items-center ms-1 me-1">
+  <h4 class="mt-2 mb-3 ms-1" :class="{ 'twinkle': onTwinkle }" @click="toShopinfo(item.id)">{{item.title}}</h4>
+  <div class="d-flex justify-content-between align-items-center ms-1 me-1" :class="{ 'twinkle': onTwinkle }">
     <p class="mb-0">$ {{item.price}}</p>
     <i v-if="!checkFav" class="fa-regular fa-heart text-secondary" @click="addFav(item.id)"></i>
     <i v-else class="fa-solid fa-heart text-danger" @click="removeFav(item.id)"></i>
@@ -14,10 +13,9 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed, reactive, ref } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
-// import lazyload from './lazyload'
 export default {
   name: 'ProductCard',
   props: [
@@ -48,19 +46,47 @@ export default {
         }
       })
     }
-    // lazyload()
-
+    const onTwinkle = ref(true)
+    const lazyOptions = reactive({
+      src: 'your image url',
+      lifecycle: {
+        loading: (el) => {
+        },
+        error: (el) => {
+        },
+        loaded: (el) => {
+          onTwinkle.value = false
+        }
+      }
+    })
     return {
       checkFav,
       addFav,
       removeFav,
-      toShopinfo
+      toShopinfo,
+      onTwinkle,
+      lazyOptions
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.twinkle {
+  color: rgba($color: #000000, $alpha: 0)!important;
+  border-radius: 5px;
+  background-color: rgba($color: #929292, $alpha: 1.0);
+  margin-left: 0!important;
+  margin-right: 0!important;
+  cursor: unset!important;
+  animation: img-loading 1.7s infinite;
+  @keyframes img-loading {
+    50% { background-color: rgba($color: #929292, $alpha: 0.5); }
+  }
+  & > * {
+    visibility: hidden;
+  }
+}
 .blur {
   border-radius: 5px;
   overflow: hidden;

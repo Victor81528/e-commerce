@@ -21,9 +21,18 @@ const routes = [
   }
 ]
 
+const scrollBehavior = (to, from, savedPosition) => {
+  if (savedPosition && to.meta.keepAlive) return savedPosition
+  return {
+    left: 0,
+    top: 0
+  }
+}
+
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+  scrollBehavior
 })
 
 export default router
