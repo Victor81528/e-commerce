@@ -57,12 +57,14 @@ export default {
         slidesPerView: 'auto',
         spaceBetween: 10,
         speed: 500,
+        allowTouchMove: true,
         breakpoints: {
           576: {
             slidesPerView: 3
           },
           768: {
-            spaceBetween: 20
+            spaceBetween: 20,
+            allowTouchMove: false
           },
           1200: {
             slidesPerView: 4
