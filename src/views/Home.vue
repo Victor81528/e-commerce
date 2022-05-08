@@ -1,8 +1,8 @@
 <template>
   <div class="home mb-5">
     <Banner :banner="banner"/>
-    <SwiperCard :data="handPickedDaily" title="Hand-picked Daily"/>
-    <SwiperCard :data="trendingNow" title="Trending Now"/>
+    <Swiper-row :data="handPickedDaily" title="Hand-picked Daily"/>
+    <Swiper-row :data="trendingNow" title="Trending Now"/>
   </div>
 </template>
 
@@ -10,12 +10,12 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 import Banner from '@/components/Banner.vue'
-import SwiperCard from '@/components/SwiperCard.vue'
+import SwiperRow from '@/components/SwiperRow.vue'
 export default {
   name: 'Home',
   components: {
     Banner,
-    SwiperCard
+    SwiperRow
   },
   setup () {
     const store = useStore()

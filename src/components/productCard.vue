@@ -1,8 +1,6 @@
 <template>
 <div class="border-0">
-  <div class="blur">
-    <img :class="{ 'twinkle': onTwinkle }" @click="toShopinfo(item.id)" v-lazy="{ src: false, lifecycle: lazyOptions.lifecycle }">
-  </div>
+  <img :class="{ 'twinkle': onTwinkle }" @click="toShopinfo(item.id)" v-lazy="{ src: item.img, lifecycle: lazyOptions.lifecycle }">
   <h4 class="mt-2 mb-3 ms-1" :class="{ 'twinkle': onTwinkle }" @click="toShopinfo(item.id)">{{item.title}}</h4>
   <div class="d-flex justify-content-between align-items-center ms-1 me-1" :class="{ 'twinkle': onTwinkle }">
     <p class="mb-0">$ {{item.price}}</p>
@@ -74,7 +72,7 @@ export default {
 <style lang="scss" scoped>
 .twinkle {
   color: rgba($color: #000000, $alpha: 0)!important;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: rgba($color: #929292, $alpha: 1.0);
   margin-left: 0!important;
   margin-right: 0!important;
@@ -87,21 +85,17 @@ export default {
     visibility: hidden;
   }
 }
-.blur {
+img {
+  width: 100%;
+  height: 250px;
   border-radius: 5px;
-  overflow: hidden;
-  img {
-    width: 100%;
-    height: 250px;
-    border-radius: 5px;
-    object-fit: cover;
-    -webkit-user-drag: none;
-    cursor: pointer;
-    transition: 0.3s;
-    @media screen and (min-width: 768px) {
-      &:hover {
-        filter: brightness(80%) grayscale(80%);
-      }
+  object-fit: cover;
+  -webkit-user-drag: none;
+  cursor: pointer;
+  transition: 0.3s;
+  @media screen and (min-width: 768px) {
+    &:hover {
+      filter: brightness(80%) grayscale(80%);
     }
   }
 }

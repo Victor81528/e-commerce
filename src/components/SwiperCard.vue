@@ -1,92 +1,34 @@
 <template>
-  <div class="swiper-card user-select-none overflow-hidden">
-    <div class="container-md my-3 my-md-5 mx-0 mx-md-auto">
-      <div class="swiper" ref="swiperEle">
-        <div class="d-flex justify-content-between mt-3">
-          <h3 class="d-block ps-md-3 mb-4">{{title}}</h3>
-          <div class="d-none d-md-flex navigation align-self-end mb-1 me-2">
-            <div class="nav-button d-flex justify-content-center align-items-center rounded-circle bg-dark" :class="{'disallow': prevDisallowed}" ref="prevButton">
-              <i class="fa-solid fa-angle-left text-white"></i>
-            </div>
-            <div class="nav-button d-flex justify-content-center align-items-center rounded-circle bg-dark" :class="{'disallow': nextDisallowed}" ref="nextButton">
-              <i class="fa-solid fa-angle-right text-white"></i>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item, index) of data" :key="index" @click="toShopInfo(item.id)">
-            <div class="blur">
-              <img :src="item.img">
-            </div>
-            <h5 class="mt-2 mb-1">{{item.title}}</h5>
-            <p class="text-secondary">{{item.desc}}</p>
-          </div>
-        </div>
-      </div>
+  <div class="swiper-card" @click="toShopInfo(item.id)">
+    <img v-lazy="{ src: item.img, lifecycle: lazyOptions.lifecycle }" :class="{ 'twinkle': onTwinkle }">
+    <div :class="{ 'twinkle': onTwinkle }">
+      <h5 class="mt-2 mb-1">{{item.title}}</h5>
+      <p class="text-secondary">{{item.desc}}</p>
     </div>
   </div>
 </template>
 
 <script>
-import { onMounted, ref } from 'vue'
+import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
-import Swiper, { Navigation, FreeMode } from 'swiper'
-import 'swiper/swiper-bundle.min.css'
 
 export default {
   name: 'SwiperCard',
-  props: ['data', 'title'],
+  props: ['item'],
   setup () {
     const router = useRouter()
 
-    let swiper = null
-    const swiperEle = ref(null)
-    const prevButton = ref(null)
-    const nextButton = ref(null)
-    const prevDisallowed = ref(true)
-    const nextDisallowed = ref(false)
-
-    onMounted(() => {
-      swiper = new Swiper(swiperEle.value, {
-        modules: [Navigation, FreeMode],
-        navigation: {
-          prevEl: prevButton.value,
-          nextEl: nextButton.value
+    const onTwinkle = ref(true)
+    const lazyOptions = reactive({
+      lifecycle: {
+        loading: (el) => {
         },
-        slidesPerView: 'auto',
-        spaceBetween: 10,
-        speed: 500,
-        allowTouchMove: true,
-        breakpoints: {
-          576: {
-            slidesPerView: 3
-          },
-          768: {
-            spaceBetween: 20,
-            allowTouchMove: false
-          },
-          1200: {
-            slidesPerView: 4
-          },
-          1400: {
-            slidesPerView: 5,
-            spaceBetween: 18
-          }
+        error: (el) => {
         },
-        on: {
-          reachBeginning: () => {
-            prevDisallowed.value = true
-          },
-          fromEdge: () => {
-            prevDisallowed.value = false
-            nextDisallowed.value = false
-          },
-          reachEnd: () => {
-            nextDisallowed.value = true
-          }
+        loaded: (el) => {
+          onTwinkle.value = false
         }
-      })
+      }
     })
 
     const toShopInfo = (id) => {
@@ -99,12 +41,8 @@ export default {
     }
 
     return {
-      swiper,
-      swiperEle,
-      prevButton,
-      nextButton,
-      prevDisallowed,
-      nextDisallowed,
+      onTwinkle,
+      lazyOptions,
       toShopInfo
     }
   }
@@ -112,60 +50,43 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h3 {
-  font-size: 36px;
+.twinkle {
+  color: rgba($color: #000000, $alpha: 0)!important;
+  border-radius: 16px;
+  background-color: rgba($color: #929292, $alpha: 1.0);
+  margin-left: 0!important;
+  margin-right: 0!important;
+  cursor: unset!important;
+  animation: img-loading 1.7s infinite;
+  @keyframes img-loading {
+    50% { background-color: rgba($color: #929292, $alpha: 0.5); }
+  }
+  & > * {
+    visibility: hidden;
+  }
+}
+img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 16px;
+  -webkit-user-drag: none;
+  transition: 0.25s;
+  &:hover {
+    filter: brightness(80%) grayscale(80%);
+  }
+  @media screen and (max-width: 768px) {
+    height: 300px;
+    &:hover {
+      filter: none;
+    }
+  }
+}
+h5 {
+  font-size: 18px;
   font-family: 'Krona one';
 }
-hr {
-  margin: 0 0 30px 0;
-}
-.swiper {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  .swiper-slide {
-    width: 60%;
-    cursor: pointer;
-    .blur {
-      overflow: hidden;
-      border-radius: 16px;
-      img {
-        width: 100%;
-        height: 360px;
-        object-fit: cover;
-        -webkit-user-drag: none;
-        transition: 0.25s;
-        &:hover {
-          filter: brightness(80%) grayscale(80%);
-        }
-        @media screen and (max-width: 768px) {
-          height: 300px;
-          &:hover {
-            filter: none;
-          }
-        }
-      }
-    }
-    h5 {
-      font-size: 18px;
-      font-family: 'Krona one';
-    }
-    p {
-      font-family: 'Jost';
-    }
-  }
-  .nav-button {
-    width: 32px;
-    height: 32px;
-    margin-right: 6px;
-    cursor: pointer;
-    transition: 0.2s;
-    i {
-      font-size: 7px;
-    }
-  }
-  .disallow {
-    opacity: 0.3;
-  }
+p {
+  font-family: 'Jost';
 }
 </style>

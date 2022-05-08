@@ -6,7 +6,7 @@
           目前沒有商品喔~
         </div>
         <div class="col-6 col-sm-4 col-lg-3 col-xl-2 position-relative mb-5" v-for="item of filteredPro" :key="item.id">
-          <ProductCard :item="item"/>
+          <Product-card :item="item"/>
         </div>
       </div>
     </div>
