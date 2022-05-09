@@ -75,8 +75,10 @@ img {
   &:hover {
     filter: brightness(80%) grayscale(80%);
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
     height: 300px;
+  }
+  @media screen and (max-width: 768px) {
     &:hover {
       filter: none;
     }

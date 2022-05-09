@@ -55,20 +55,28 @@ export default {
         spaceBetween: 10,
         speed: 500,
         allowTouchMove: true,
+        freeMode: true,
         breakpoints: {
           576: {
             slidesPerView: 3
           },
           768: {
+            slidesPerView: 3,
             spaceBetween: 20,
-            allowTouchMove: false
+            allowTouchMove: false,
+            freeMode: true
           },
           1200: {
-            slidesPerView: 4
+            slidesPerView: 4,
+            spaceBetween: 20,
+            allowTouchMove: false,
+            freeMode: true
           },
           1400: {
             slidesPerView: 5,
-            spaceBetween: 18
+            spaceBetween: 18,
+            allowTouchMove: false,
+            freeMode: true
           }
         },
         on: {
