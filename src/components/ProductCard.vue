@@ -46,7 +46,6 @@ export default {
     }
     const onTwinkle = ref(true)
     const lazyOptions = reactive({
-      src: 'your image url',
       lifecycle: {
         loading: (el) => {
         },
