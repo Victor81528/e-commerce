@@ -9,10 +9,11 @@
 - Git
 - BootStrap
 
-原先想使用假API，但沒看到合用的...\
-JS方面著重元件切割與Vuex資料庫的分工\
-CSS互動效果與RWD\
-Vue CLI環境變數\
+原先想使用假 API，但沒看到合用的...\
+JS 方面著重元件切割與 Vuex 資料庫的分工\
+CSS 互動效果與RWD\
+Vue CLI 環境變數\
+新增了 lazy-loading 提升瀏覽體驗
 
 主要 breakpoint 為 ： 768px、576px\
 面向 device： 桌機、平板、手機\
