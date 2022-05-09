@@ -9,7 +9,7 @@
       </div>
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(item, index) of banner" :key="index">
-          <img class="w-100" :src="item.img" loading="lazy">
+          <img class="w-100" :src="item.img">
           <h5 class="text-white" v-html="item.title"></h5>
           <p v-html="item.desc"></p>
           <router-link :to="{ path: item.link }" v-html="item.linkTitle"/>
