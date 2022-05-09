@@ -3,9 +3,7 @@
     <div class="container py-3 py-sm-4 py-md-5 mb-5">
       <div class="row position-relative">
         <div class="img-container col-12 col-sm-6">
-          <div class="">
-            <img :class="{ 'twinkle': onTwinkle }" v-lazy="{ src: productInfo.img, lifecycle: lazyOptions.lifecycle }">
-          </div>
+          <img :class="{ 'twinkle': onTwinkle }" v-lazy="{ src: productInfo.img, lifecycle: lazyOptions.lifecycle }">
         </div>
         <div class="col-12 col-sm-6 d-flex flex-column mt-4 mt-sm-0">
           <div class="d-flex mb-4" :class="{ 'twinkle': onTwinkle }">
@@ -183,6 +181,7 @@ export default {
     object-fit: cover;
     img {
       width: 100%;
+      border-radius: 3px;
     }
   }
   h1 {
@@ -200,8 +199,8 @@ export default {
   .size {
     width: 16%;
     max-width: 55px;
+    border-radius: 2px;
     font-family: 'Jost';
-    // font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
     @media screen and (min-width: 768px) {
@@ -218,16 +217,19 @@ export default {
     background-color: #EBE5DC;
   }
 }
-.counter-button {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-.counter-show {
-  width: 50px;
-  height: 30px;
-  @media screen and (max-width: 576px) {
-    width: 75px;
+.counter {
+  border-radius: 2px;
+  .counter-button {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  .counter-show {
+    width: 50px;
+    height: 30px;
+    @media screen and (max-width: 576px) {
+      width: 75px;
+    }
   }
 }
 .fav {
@@ -240,6 +242,7 @@ export default {
   }
 }
 .add {
+  border-radius: 2px;
   cursor: pointer;
   transition: 0.3s;
   @media screen and (min-width: 768px) {

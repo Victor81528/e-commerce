@@ -344,11 +344,11 @@ const state = {
     },
     {
       id: 39,
-      title: 'Blue thinker',
-      img: process.env.VUE_APP_PATH + '/img/product/39.jpeg',
-      desc: 'Malaco and Uta. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided.',
-      price: 2850,
-      gender: 0,
+      title: 'Sheep Clothing',
+      img: process.env.VUE_APP_PATH + '/img/product/48.jpeg',
+      desc: 'Lorem Ipsumorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unkno is simply dummy text of the printing and typesetting industry. Lgalley of type atium scelerisque leo malesuada eget. Orci varius natoqu, survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ',
+      price: 3500,
+      gender: 2,
       type: 0
     },
     {
@@ -420,6 +420,15 @@ const state = {
       img: process.env.VUE_APP_PATH + '/img/product/47.jpeg',
       desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ',
       price: 32690,
+      gender: 0,
+      type: 0
+    },
+    {
+      id: 48,
+      title: 'Blue thinker',
+      img: process.env.VUE_APP_PATH + '/img/product/39.jpeg',
+      desc: 'Malaco and Uta. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided.',
+      price: 2850,
       gender: 0,
       type: 0
     }

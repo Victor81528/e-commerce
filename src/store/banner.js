@@ -31,9 +31,9 @@ const state = {
       link: '/all/shoes'
     },
     {
-      title: '<span style="color: black">Ocalou Design<span>',
+      title: '<span">Ocalou Design<span>',
       img: process.env.VUE_APP_PATH + '/img/banner/06.jpeg',
-      linkTitle: '<span style="color: black; font-weight: 600">Discover the new collection</span>',
+      linkTitle: '<span style="color: white">Discover the new collection</span>',
       link: '/women/clothing'
     },
     {
