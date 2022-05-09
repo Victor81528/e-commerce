@@ -53,13 +53,13 @@ export default {
 .twinkle {
   color: rgba($color: #000000, $alpha: 0)!important;
   border-radius: 16px;
-  background-color: rgba($color: #929292, $alpha: 1.0);
+  background-color: rgba($color: #cccccc, $alpha: 1.0);
   margin-left: 0!important;
   margin-right: 0!important;
   cursor: unset!important;
   animation: img-loading 1.7s infinite;
   @keyframes img-loading {
-    50% { background-color: rgba($color: #929292, $alpha: 0.5); }
+    50% { background-color: rgba($color: #cccccc, $alpha: 0.5); }
   }
   & > * {
     visibility: hidden;

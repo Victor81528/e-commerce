@@ -1,6 +1,6 @@
 <template>
   <div class="banner d-none d-md-flex justify-content-center user-select-none">
-    <div class="placeholder twinkle"></div>
+    <div class="twinkle"></div>
     <div class="swiper" ref="swiperEle">
       <div class="swiper-button start-0" ref="prevButton">
         <div class="swiper-button-prev text-light"></div>
@@ -64,26 +64,23 @@ export default {
 
 <style lang="scss" scoped>
 .twinkle {
-  color: rgba($color: #000000, $alpha: 0)!important;
+  position: absolute;
+  width: 94%;
+  height: 92%;
   border-radius: 10px;
-  background-color: rgba($color: #929292, $alpha: 1.0);
+  margin-top: 25px;
+  z-index: -1;
+  background-color: rgba($color: #cccccc, $alpha: 1.0);
   cursor: unset!important;
   animation: img-loading 1.7s infinite;
   @keyframes img-loading {
-    50% { background-color: rgba($color: #929292, $alpha: 0.7); }
+    50% { background-color: rgba($color: #cccccc, $alpha: 0.5); }
   }
 }
 .banner {
   position: relative;
   width: 100vw;
   aspect-ratio: 1920/890;
-  .placeholder {
-    position: absolute;
-    width: 94%;
-    height: 92%;
-    margin-top: 25px;
-    z-index: -1;
-  }
 }
 .swiper {
   .swiper-button {
@@ -137,7 +134,7 @@ export default {
       transform: translate(-50%,-50%);
       transition: 0.1s;
       &:hover {
-        opacity: 0.5;
+        opacity: 0.6;
       }
     }
   }
