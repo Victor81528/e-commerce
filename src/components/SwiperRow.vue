@@ -119,7 +119,6 @@ export default {
   }
   .swiper-slide {
     width: 60%;
-    cursor: pointer;
   }
   .nav-button {
     width: 32px;

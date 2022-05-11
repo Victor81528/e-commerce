@@ -1,7 +1,6 @@
 <template>
   <div class="banner d-none d-md-flex justify-content-center user-select-none">
-    <div class="twinkle"></div>
-    <div class="swiper" ref="swiperEle">
+    <div class="swiper" ref="swiperEle" :class="{ 'twinkle': onLoading }">
       <div class="swiper-button start-0" ref="prevButton">
         <div class="swiper-button-prev text-light"></div>
       </div>
@@ -10,7 +9,7 @@
       </div>
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(item, index) of banner" :key="index">
-          <img class="w-100" :src="item.img">
+          <img :src="item.img" class="w-100" @load="onImg()">
           <h5 class="text-white" v-html="item.title"></h5>
           <p v-html="item.desc"></p>
           <router-link :to="{ path: item.link }" v-html="item.linkTitle"/>
@@ -52,11 +51,18 @@ export default {
       })
     })
 
+    const onLoading = ref(true)
+    const onImg = () => {
+      onLoading.value = false
+    }
+
     return {
       swiper,
       swiperEle,
       prevButton,
-      nextButton
+      nextButton,
+      onLoading,
+      onImg
     }
   }
 }
@@ -75,6 +81,9 @@ export default {
   animation: img-loading 1.7s infinite;
   @keyframes img-loading {
     50% { background-color: rgba($color: #cccccc, $alpha: 0.5); }
+  }
+  & > * {
+    visibility: hidden;
   }
 }
 .banner {

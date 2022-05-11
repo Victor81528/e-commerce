@@ -112,6 +112,7 @@ export default {
       const data = store.state.favorite.data
       return data.some(i => i.id === parseInt(id.value))
     })
+
     const addFav = (id) => {
       // 將該產品id加入localStorage
       store.commit('favorite/add', id)

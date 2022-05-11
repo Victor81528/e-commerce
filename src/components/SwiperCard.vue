@@ -1,7 +1,9 @@
 <template>
-  <div class="swiper-card" @click="toShopInfo(item.id)">
-    <img v-lazy="{ src: item.img, lifecycle: lazyOptions.lifecycle }" :class="{ 'twinkle': onTwinkle }">
-    <div :class="{ 'twinkle': onTwinkle }">
+  <div class="swiper-card" :class="{ 'no-event': onLoading }" @click="toShopInfo(item.id)">
+    <div :class="{ 'twinkle': onLoading }">
+      <img :src="item.img" @load="onImg()">
+    </div>
+    <div :class="{ 'twinkle': onLoading }">
       <h5 class="mt-2 mb-1">{{item.title}}</h5>
       <p class="text-secondary">{{item.desc}}</p>
     </div>
@@ -9,7 +11,7 @@
 </template>
 
 <script>
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 export default {
@@ -18,18 +20,10 @@ export default {
   setup () {
     const router = useRouter()
 
-    const onTwinkle = ref(true)
-    const lazyOptions = reactive({
-      lifecycle: {
-        loading: (el) => {
-        },
-        error: (el) => {
-        },
-        loaded: (el) => {
-          onTwinkle.value = false
-        }
-      }
-    })
+    const onLoading = ref(true)
+    const onImg = () => {
+      onLoading.value = false
+    }
 
     const toShopInfo = (id) => {
       router.push({
@@ -41,8 +35,8 @@ export default {
     }
 
     return {
-      onTwinkle,
-      lazyOptions,
+      onLoading,
+      onImg,
       toShopInfo
     }
   }
@@ -56,7 +50,7 @@ export default {
   background-color: rgba($color: #cccccc, $alpha: 1.0);
   margin-left: 0!important;
   margin-right: 0!important;
-  cursor: unset!important;
+  cursor: default!important;
   animation: img-loading 1.7s infinite;
   @keyframes img-loading {
     50% { background-color: rgba($color: #cccccc, $alpha: 0.5); }
@@ -64,6 +58,13 @@ export default {
   & > * {
     visibility: hidden;
   }
+}
+.no-event {
+  pointer-events: none;
+}
+
+.swiper-card {
+  cursor: pointer;
 }
 img {
   width: 100%;

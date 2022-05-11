@@ -1,8 +1,8 @@
 <template>
 <div class="border-0">
-  <img :class="{ 'twinkle': onTwinkle }" @click="toShopinfo(item.id)" v-lazy="{ src: item.img, lifecycle: lazyOptions.lifecycle }">
-  <h4 class="mt-2 mb-3 ms-1" :class="{ 'twinkle': onTwinkle }" @click="toShopinfo(item.id)">{{item.title}}</h4>
-  <div class="d-flex justify-content-between align-items-center ms-1 me-1" :class="{ 'twinkle': onTwinkle }">
+  <img :class="{ 'twinkle': onLoading }" @click="toShopinfo(item.id)" v-lazy="{ src: item.img, lifecycle: lazyOptions.lifecycle }">
+  <h4 class="mt-2 mb-3 ms-1" :class="{ 'twinkle': onLoading }" @click="toShopinfo(item.id)">{{item.title}}</h4>
+  <div class="d-flex justify-content-between align-items-center ms-1 me-1" :class="{ 'twinkle': onLoading }">
     <p class="mb-0">$ {{item.price}}</p>
     <i v-if="!checkFav" class="fa-regular fa-heart text-secondary" @click="addFav(item.id)"></i>
     <i v-else class="fa-solid fa-heart text-danger" @click="removeFav(item.id)"></i>
@@ -44,7 +44,7 @@ export default {
         }
       })
     }
-    const onTwinkle = ref(true)
+    const onLoading = ref(true)
     const lazyOptions = reactive({
       lifecycle: {
         loading: (el) => {
@@ -52,7 +52,7 @@ export default {
         error: (el) => {
         },
         loaded: (el) => {
-          onTwinkle.value = false
+          onLoading.value = false
         }
       }
     })
@@ -61,7 +61,7 @@ export default {
       addFav,
       removeFav,
       toShopinfo,
-      onTwinkle,
+      onLoading,
       lazyOptions
     }
   }
@@ -76,6 +76,7 @@ export default {
   margin-left: 0!important;
   margin-right: 0!important;
   cursor: unset!important;
+  pointer-events: none;
   animation: img-loading 1.7s infinite;
   @keyframes img-loading {
     50% { background-color: rgba($color: #cccccc, $alpha: 0.5); }
