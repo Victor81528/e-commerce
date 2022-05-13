@@ -29,8 +29,8 @@
               style="vertical-align: middle;font-family: 'Krona one';font-size: 21px; font-weight: 600">Kjølig</a>
           </h1>
           <ul class="nav py-3">
-            <li class="nav-link d-block d-md-none px-0" >
-              <i class="fa-solid fa-bars  text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"></i>
+            <li class="nav-link d-block d-md-none px-0">
+              <i class="fa-solid fa-bars text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"></i>
             </li>
             <li class="nav-link d-none d-md-block ps-0 pe-2 me-1">
               <router-link :to="{ name: 'Shop', params: { group: group || 'all', type: 'all' }}" class="nav2 position-relative text-secondary">

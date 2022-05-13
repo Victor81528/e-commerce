@@ -50,7 +50,7 @@
     </div>
     <div class="modal-footer d-flex justify-content-between">
       Total ${{totalPrice}}
-      <div class="checkOut py-2 px-3 text-center bg-black text-white">結帳</div>
+      <div class="check-out py-2 px-3 text-center bg-black text-white">結帳</div>
     </div>
   </div>
 </div>
@@ -160,7 +160,8 @@ export default {
     }
   }
 }
-.checkOut {
+.check-out {
+  border-radius: 2px;
   cursor: pointer;
   transition: 0.3s;
   &:hover {
