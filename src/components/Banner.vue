@@ -83,7 +83,7 @@ export default {
     50% { background-color: rgba($color: #cccccc, $alpha: 0.5); }
   }
   & > * {
-    visibility: hidden;
+    visibility: hidden!important;
   }
 }
 .banner {
