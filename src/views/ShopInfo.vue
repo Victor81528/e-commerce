@@ -30,15 +30,15 @@
             </div>
             <div class="size-container d-flex mb-5">
               <h5 class="d-none d-lg-inline m-0 me-3 my-auto">尺寸</h5>
-              <div :class="{ 'size-check': size.s }" @click="sizeCheck('s')"
+              <div :class="{ 'size-check': chosenSize === 's' }" @click="sizeCheck('s')"
                 class="size border border-dark text-center me-2 me-sm-1 me-md-2 py-3 p-sm-2">S</div>
-              <div :class="{ 'size-check': size.m }" @click="sizeCheck('m')"
+              <div :class="{ 'size-check': chosenSize === 'm' }" @click="sizeCheck('m')"
                 class="size border border-dark text-center me-2 me-sm-1 me-md-2 py-3 p-sm-2">M</div>
-              <div :class="{ 'size-check': size.l }" @click="sizeCheck('l')"
+              <div :class="{ 'size-check': chosenSize === 'l' }" @click="sizeCheck('l')"
                 class="size border border-dark text-center me-2 me-sm-1 me-md-2 py-3 p-sm-2">L</div>
-              <div :class="{ 'size-check': size.xl }" @click="sizeCheck('xl')"
+              <div :class="{ 'size-check': chosenSize === 'xl' }" @click="sizeCheck('xl')"
                 class="size border border-dark text-center me-2 me-sm-1 me-md-2 py-3 p-sm-2">XL</div>
-              <div :class="{ 'size-check': size.xxl }" @click="sizeCheck('xxl')"
+              <div :class="{ 'size-check': chosenSize === 'xxl' }" @click="sizeCheck('xxl')"
                 class="size border border-dark text-center py-3 p-sm-2">XXL</div>
             </div>
             <div class="add mt-auto p-3 text-center bg-black text-white"
@@ -91,21 +91,9 @@ export default {
       if (count.value >= 9) count.value = 9
     })
 
-    const size = reactive({
-      s: false,
-      m: false,
-      l: false,
-      xl: false,
-      xxl: false
-    })
+    const chosenSize = ref('')
     const sizeCheck = (e) => {
-      if (size[e] === true) size[e] = false
-      else {
-        for (const i in size) {
-          size[i] = false
-        }
-        size[e] = true
-      }
+      chosenSize.value = chosenSize.value === e ? '' : e
     }
 
     const checkFav = computed(() => {
@@ -128,9 +116,7 @@ export default {
     const addCart = (id, qty) => {
       store.commit('cart/add', { id, qty })
       store.commit('cart/getData')
-      for (const i in size) {
-        size[i] = false
-      }
+      chosenSize.value = ''
       count.value = 1
       alert.value = true
       setTimeout(() => {
@@ -143,7 +129,7 @@ export default {
       onTwinkle,
       lazyOptions,
       count,
-      size,
+      chosenSize,
       sizeCheck,
       reduce,
       increase,
