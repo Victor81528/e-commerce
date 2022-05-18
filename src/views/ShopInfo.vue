@@ -91,6 +91,7 @@ export default {
       if (count.value >= 9) count.value = 9
     })
 
+    // size
     const chosenSize = ref('')
     const sizeCheck = (e) => {
       chosenSize.value = chosenSize.value === e ? '' : e
@@ -144,14 +145,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../scss/all.scss';
 .twinkle {
-  color: rgba($color: #000000, $alpha: 0)!important;
+  color: rgba($color: $black, $alpha: 0)!important;
   border-radius: 5px;
-  background-color: rgba($color: #cccccc, $alpha: 1.0);
+  background-color: rgba($color: $placeholder, $alpha: 1.0);
   cursor: unset!important;
   animation: img-loading 1.7s infinite;
   @keyframes img-loading {
-    50% { background-color: rgba($color: #cccccc, $alpha: 0.5); }
+    50% { background-color: rgba($color: $placeholder, $alpha: 0.5); }
   }
   & > * {
     visibility: hidden;
@@ -192,7 +194,7 @@ export default {
     transition: 0.3s;
     @media screen and (min-width: 768px) {
       &:hover {
-        background-color: #EBE5DC;
+        background-color: $primary;
       }
     }
     @media screen and (max-width: 992px) {
@@ -201,7 +203,7 @@ export default {
     }
   }
   .size-check {
-    background-color: #EBE5DC;
+    background-color: $primary;
   }
 }
 .counter {

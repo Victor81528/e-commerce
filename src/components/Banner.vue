@@ -69,6 +69,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../scss/all.scss';
 .twinkle {
   position: absolute;
   width: 94%;
@@ -76,11 +77,11 @@ export default {
   border-radius: 10px;
   margin-top: 25px;
   z-index: -1;
-  background-color: rgba($color: #cccccc, $alpha: 1.0);
+  background-color: rgba($color: $placeholder, $alpha: 1.0);
   cursor: unset!important;
   animation: img-loading 1.7s infinite;
   @keyframes img-loading {
-    50% { background-color: rgba($color: #cccccc, $alpha: 0.5); }
+    50% { background-color: rgba($color: $placeholder, $alpha: 0.5); }
   }
   & > * {
     visibility: hidden!important;
